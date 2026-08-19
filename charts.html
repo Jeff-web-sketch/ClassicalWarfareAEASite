@@ -1,401 +1,392 @@
-<style>
-	h2 {
-		
-		}
-	
-</style>
-<link rel="stylesheet" href="style.css">   
-<div style="display: flex;
-    gap: 10px;">
-<a href="index.html">
-<button>Home</button>
-<a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Unit comparison charts and gather rates for Classical Warfare AEA.">
+  <meta name="keywords" content="0 A.D., Classical Warfare, AEA, charts, unit stats, comparison, gather rates">
+  <title>Charts - Classical Warfare AEA</title>
+  <link rel="icon" href="icons/town_phase.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .charts-table {
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 1200px;
+      margin: 20px auto;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
 
-<a href="news.html">
-<button>News</button>
-<a>
+    .charts-table th, 
+    .charts-table td {
+      border: 1px solid #8B4513;
+      padding: 12px;
+      text-align: center;
+    }
 
-<a href="screenshots.html">
-<button>Screenshots</button>
-<a>
+    .charts-table th {
+      background: linear-gradient(135deg, #8B4513, #A0522D);
+      color: #f4e4bc;
+      font-weight: bold;
+    }
 
-<a href="charts.html">
-<button>Charts</button>
-<a>
+    .charts-table tr:nth-child(even) {
+      background: rgba(139, 69, 19, 0.1);
+    }
 
+    .charts-table tr:hover {
+      background: rgba(139, 69, 19, 0.2);
+    }
 
+    .charts-table .notes {
+      text-align: left;
+      font-style: italic;
+      background: rgba(139, 69, 19, 0.15);
+    }
 
-<div class="dropdown">
-    <button class="dropbtn">Civs</button>
-    <div class="dropdown-content">
-<a href="athen.html">
-<button>Athenians</button>
-<a>
-	
-<a href="brit.html">
-<button>Britons</button>
-<a>
+    @media (max-width: 768px) {
+      .charts-table {
+        font-size: 0.8em;
+      }
+      
+      .charts-table th, 
+      .charts-table td {
+        padding: 8px 4px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+    <nav class="side-nav">
+      <a href="index.html" class="nav-link">
+        <button>Home</button>
+      </a>
+      <a href="news.html" class="nav-link">
+        <button>News</button>
+      </a>
+      <a href="screenshots.html" class="nav-link">
+        <button>Screenshots</button>
+      </a>
+      <a href="charts.html" class="nav-link">
+        <button>Charts</button>
+      </a>
+      <div class="dropdown" id="civDropdown">
+        <button class="dropbtn" onclick="toggleDropdown()">Civs ▼</button>
+        <div class="dropdown-content">
+          <a href="athen.html"><button>Athenians</button></a>
+          <a href="brit.html"><button>Britons</button></a>
+          <a href="cart.html"><button>Carthaginians</button></a>
+          <a href="gauls.html"><button>Gauls</button></a>
+          <a href="germ.html"><button>Germans</button></a>
+          <a href="han.html"><button>Han</button></a>
+          <a href="iber.html"><button>Iberians</button></a>
+          <a href="kush.html"><button>Kushites</button></a>
+          <a href="mace.html"><button>Macedonians</button></a>
+          <a href="maur.html"><button>Mauryas</button></a>
+          <a href="pers.html"><button>Persians</button></a>
+          <a href="ptol.html"><button>Ptolemies</button></a>
+          <a href="rome.html"><button>Romans</button></a>
+          <a href="sele.html"><button>Seleucids</button></a>
+          <a href="spartans.html"><button>Spartans</button></a>
+          <a href="theb.html"><button>Thebans</button></a>
+        </div>
+      </div>
+    </nav>
 
-<a href="cart.html">
-<button>Carthaginians</button>
-<a>	
+    <div class="main-content">
+      <div class="logo">
+        <img src="logo.png" alt="Classical Warfare AEA Logo">
+      </div>
 
-<a href="gauls.html">
-<button>Gauls</button>
-<a>
+      <div class="container">
+        <div class="container2">
+          <h1>Unit Comparison Charts</h1>
+          
+          <table class="charts-table">
+            <colgroup>
+              <col span="6">
+              <col style="width: 180px;">
+              <col span="4">
+            </colgroup>
+            <tr>
+              <th colspan="11">Unit Comparison</th>
+            </tr>
 
-<a href="germ.html">
-<button>Germans</button>
-<a>	
+            <tr>
+              <th>UNIT</th>
+              <th>DMG (C/H/P)</th>
+              <th>Total DMG</th>
+              <th>Rate</th>
+              <th>DPS</th>
+              <th>HP</th>
+              <th>Resistance</th>
+              <th>Movement Speed</th>
+              <th>Range</th>
+              <th>Spread</th>
+              <th>Bonus</th>
+            </tr>
 
-<a href="han.html">
-<button>Han</button>
-<a>	
+            <!-- Citizen Soldiers Melee -->
+            <tr>
+              <td>Axeman</td>
+              <td>4C 8H 1P</td>
+              <td>13</td>
+              <td>1.25</td>
+              <td>10.4</td>
+              <td>150</td>
+              <td>1.5C 3H 2.5P</td>
+              <td>8.1</td>
+              <td>2</td>
+              <td>0</td>
+              <td></td>
+            </tr>
 
-<a href="iber.html">
-<button>Iberians</button>
-<a>	
+            <tr>
+              <td>Maceman</td>
+              <td>7C 3H</td>
+              <td>10</td>
+              <td>1</td>
+              <td>10</td>
+              <td>150</td>
+              <td>1.5C 2.5H 3P</td>
+              <td>8.3</td>
+              <td>2</td>
+              <td>0</td>
+              <td>1.5x vs Melee Inf</td>
+            </tr>
 
-<a href="kush.html">
-<button>Kushites</button>
-<a>	
+            <tr>
+              <td>Pikeman</td>
+              <td>5H 11P</td>
+              <td>16</td>
+              <td>2</td>
+              <td>8</td>
+              <td>150</td>
+              <td>3C 4H 4P</td>
+              <td>7.5</td>
+              <td>10</td>
+              <td>0</td>
+              <td>2.5x vs Cavalry</td>
+            </tr>
 
-<a href="mace.html">
-<button>Macedonians</button>
-<a>	
+            <tr>
+              <td>Spearman</td>
+              <td>4H 7P</td>
+              <td>11</td>
+              <td>1.25</td>
+              <td>8.8</td>
+              <td>150</td>
+              <td>1.5C 2.5H 3P</td>
+              <td>7.9</td>
+              <td>4.5</td>
+              <td>0</td>
+              <td>2x vs Cavalry</td>
+            </tr>
 
-<a href="maur.html">
-<button>Mauryas</button>
-<a>	
-	
-<a href="pers.html">
-<button>Persians</button>
-<a>	
+            <tr>
+              <td>Swordsman</td>
+              <td>6H 4P</td>
+              <td>10</td>
+              <td>1</td>
+              <td>10</td>
+              <td>150</td>
+              <td>1.5C 3H 3P</td>
+              <td>8.1</td>
+              <td>2.5</td>
+              <td>0</td>
+              <td>1.5x vs Ranged Inf</td>
+            </tr>
 
-<a href="ptol.html">
-<button>Ptolemies</button>
-<a>	
-	
-<a href="rome.html">
-<button>Romans</button>
-<a>	
+            <!-- Citizen Soldiers Ranged -->
+            <tr>
+              <td>Archer</td>
+              <td>8P</td>
+              <td>8</td>
+              <td>1.5</td>
+              <td>5.3</td>
+              <td>75</td>
+              <td>1H .5P</td>
+              <td>8.4</td>
+              <td>68</td>
+              <td>2.5</td>
+              <td></td>
+            </tr>
 
-<a href="sele.html">
-<button>Seleucids</button>
-<a>	
-	
-<a href="spartans.html">
-<button>Spartans</button>
-<a>
+            <tr>
+              <td>Archer (Greek)</td>
+              <td>9.2P</td>
+              <td>9.2</td>
+              <td>1.5</td>
+              <td>6.1</td>
+              <td>75</td>
+              <td>1H .5P</td>
+              <td>8.4</td>
+              <td>50</td>
+              <td>2</td>
+              <td></td>
+            </tr>
 
-<a href="theb.html">
-<button>Thebans</button>
-<a>	
-	
-      <br>
+            <tr>
+              <td>Crossbow</td>
+              <td>22P</td>
+              <td>22</td>
+              <td>3</td>
+              <td>7.3</td>
+              <td>75</td>
+              <td>1.5H 1P</td>
+              <td>8.3</td>
+              <td>38</td>
+              <td>1.5</td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>Javelineer</td>
+              <td>1H 16.5P</td>
+              <td>17.5</td>
+              <td>2</td>
+              <td>8.8</td>
+              <td>75</td>
+              <td>1H .5P</td>
+              <td>8.7</td>
+              <td>27</td>
+              <td>3.5</td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>Peltast</td>
+              <td>1H 16.5P</td>
+              <td>17.5</td>
+              <td>2</td>
+              <td>8.8</td>
+              <td>75</td>
+              <td>1H 1.5P</td>
+              <td>8.6</td>
+              <td>27</td>
+              <td>3.5</td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>Slinger</td>
+              <td>3.5C 3.5P</td>
+              <td>7</td>
+              <td>1</td>
+              <td>7.0</td>
+              <td>75</td>
+              <td>.5H .5P</td>
+              <td>8.8</td>
+              <td>47</td>
+              <td>2.5</td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>Slinger (Lead)</td>
+              <td>.3C 4.9P</td>
+              <td>5.2</td>
+              <td>1</td>
+              <td>5.2</td>
+              <td>75</td>
+              <td>.5H .5P</td>
+              <td>8.8</td>
+              <td>72</td>
+              <td>1.5</td>
+              <td></td>
+            </tr>
+
+            <!-- Notes -->
+            <tr class="notes">
+              <td colspan="11">
+                Base stats for CS Infantry. Overall stats may vary civ to civ based on
+                team/civ bonuses. Melee Cavalry deals 10% more damage, has +0.5 range,
+                but attacks 1/4 second slower than infantry counterparts.
+                Javelineer Cavalry has the same damage/range as infantry counterparts.
+                Mounted Archers deal 10% more damage, but have 5% less range than infantry counterparts.
+              </td>
+            </tr>
+
+            <!-- Gather Rates -->
+            <tr>
+              <th colspan="11">Unit Gather Rates</th>
+            </tr>
+
+            <tr>
+              <th colspan="3">Unit</th>
+              <th>Berries</th>
+              <th>Grain</th>
+              <th>Meat</th>
+              <th>Wood</th>
+              <th>Stone</th>
+              <th>Metal</th>
+              <th colspan="2"></th>
+            </tr>
+
+            <tr>
+              <td colspan="3">Civilian</td>
+              <td>1 (15)</td>
+              <td>0.5 (15)</td>
+              <td>3 (15)</td>
+              <td>0.7 (15)</td>
+              <td>0.4 (15)</td>
+              <td>0.4 (15)</td>
+              <td colspan="2"></td>
+            </tr>
+
+            <tr>
+              <td colspan="3">CS</td>
+              <td>0.5 (10)</td>
+              <td>0.25 (10)</td>
+              <td>3 (10)</td>
+              <td>0.6 (10)</td>
+              <td>0.3 (10)</td>
+              <td>0.3 (10)</td>
+              <td colspan="2"></td>
+            </tr>
+
+            <tr>
+              <td colspan="3">Slave</td>
+              <td>1.5 (15)</td>
+              <td>0.75 (15)</td>
+              <td>3 (15)</td>
+              <td>1.05 (15)</td>
+              <td>0.6 (15)</td>
+              <td>0.6 (15)</td>
+              <td colspan="2"></td>
+            </tr>
+
+            <tr class="notes">
+              <td colspan="11">
+                Base gathering rates per second. Carrying capacity is shown in parentheses.
+                Values may vary based on team/civ bonuses.
+              </td>
+            </tr>
+          </table>
+          
+          <p>Last updated May 9, 2026</p>
+        </div>
+      </div>
     </div>
   </div>
 
+  <script>
+    function toggleDropdown() {
+      const dropdown = document.getElementById('civDropdown');
+      dropdown.classList.toggle('active');
+    }
 
-
-
-
-</div>
-
-
-<head>
-  <title>Charts - Clasic Warefare AEA</title>
-  <link rel="icon" href="town_phase.png" type="image/png">
-</head>   
-
-
-
-	<div class="title">
-		<h1 style="color: white;">Charts</h1>
-     <!--<img style="width: 100px;" src="town_phase.png">-->
-
-</div>
-
-
-<div class="container">
-  <div class="contianer2"> 
-	  
-	  
-	  
-
-	  
-<!--This is the table, replace all stuff between this and the next one-->
-	  
-<table border="1" style="border-collapse: collapse; width: 1200px;">
-    <colgroup>
-        <col span="6">
-        <col style="width: 180px;"> <!-- 7th column: Resistance -->
-        <col span="4">
-    </colgroup>
-    <tr>
-        <th colspan="11">Unit Comparison</th>
-    </tr>
-
-    <tr>
-        <th>UNIT</th>
-        <th>DMG (C/H/P)</th>
-        <th>Total DMG</th>
-        <th>Rate</th>
-        <th>DPS</th>
-        <th>HP</th>
-        <th>Resistance</th>
-        <th>Movement Speed</th>
-        <th>Range</th>
-        <th>Spread</th>
-        <th>Bonus</th>
-    </tr>
-
-    <!-- Citizen Soldiers Melee -->
-    <tr>
-    </tr>
-    <tr>
-        <td>Axeman</td>
-        <td>4C 8H 1P</td>
-        <td>13</td>
-        <td>1.25</td>
-        <td>10.4</td>
-        <td>150</td>
-        <td>1.5C 3H 2.5P</td>
-        <td>8.1</td>
-        <td>2</td>
-        <td>0</td>
-        <td></td>
-    </tr>
-
-    <tr>
-        <td>Maceman</td>
-        <td>7C 3H</td>
-        <td>10</td>
-        <td>1</td>
-        <td>10</td>
-        <td>150</td>
-        <td>1.5C 2.5H 3P</td>
-        <td>8.3</td>
-        <td>2</td>
-        <td>0</td>
-        <td>1.5x vs Melee Inf</td>
-    </tr>
-
-    <tr>
-        <td>Pikeman</td>
-        <td>5H 11P</td>
-        <td>16</td>
-        <td>2</td>
-        <td>8</td>
-        <td>150</td>
-        <td>3C 4H 4P</td>
-        <td>7.5</td>
-        <td>10</td>
-        <td>0</td>
-        <td>2.5x vs Cavalry</td>
-    </tr>
-
-    <tr>
-        <td>Spearman</td>
-        <td>4H 7P</td>
-        <td>11</td>
-        <td>1.25</td>
-        <td>8.8</td>
-        <td>150</td>
-        <td>1.5C 2.5H 3P</td>
-        <td>7.9</td>
-        <td>4.5</td>
-        <td>0</td>
-        <td>2x vs Cavalry</td>
-    </tr>
-
-    <tr>
-        <td>Swordsman</td>
-        <td>6H 4P</td>
-        <td>10</td>
-        <td>1</td>
-        <td>10</td>
-        <td>150</td>
-        <td>1.5C 3H 3P</td>
-        <td>8.1</td>
-        <td>2.5</td>
-        <td>0</td>
-        <td>1.5x vs Ranged Inf</td>
-    </tr>
-
-    <!-- Citizen Soldiers Ranged -->
-    <tr>
-    </tr>
-    <tr>
-        <td>Archer</td>
-        <td>8P</td>
-        <td>8</td>
-        <td>1.5</td>
-        <td>5.3</td>
-        <td>75</td>
-        <td>1H .5P</td>
-        <td>8.4</td>
-        <td>68</td>
-        <td>2.5</td>
-        <td></td>
-    </tr>
-
-    <tr>
-        <td>Archer (Greek)</td>
-        <td>9.2P</td>
-        <td>9.2</td>
-        <td>1.5</td>
-        <td>6.1</td>
-        <td>75</td>
-        <td>1H .5P</td>
-        <td>8.4</td>
-        <td>50</td>
-        <td>2</td>
-        <td></td>
-    </tr>
-
-    <tr>
-        <td>Crossbow</td>
-        <td>22P</td>
-        <td>22</td>
-        <td>3</td>
-        <td>7.3</td>
-        <td>75</td>
-        <td>1.5H 1P</td>
-        <td>8.3</td>
-        <td>38</td>
-        <td>1.5</td>
-        <td></td>
-    </tr>
-
-    <tr>
-        <td>Javelineer</td>
-        <td>1H 16.5P</td>
-        <td>17.5</td>
-        <td>2</td>
-        <td>8.8</td>
-        <td>75</td>
-        <td>1H .5P</td>
-        <td>8.7</td>
-        <td>27</td>
-        <td>3.5</td>
-        <td></td>
-    </tr>
-
-    <tr>
-        <td>Peltast</td>
-        <td>1H 16.5P</td>
-        <td>17.5</td>
-        <td>2</td>
-        <td>8.8</td>
-        <td>75</td>
-        <td>1H 1.5P</td>
-        <td>8.6</td>
-        <td>27</td>
-        <td>3.5</td>
-        <td></td>
-    </tr>
-
-    <tr>
-        <td>Slinger</td>
-        <td>3.5C 3.5P</td>
-        <td>7</td>
-        <td>1</td>
-        <td>7.0</td>
-        <td>75</td>
-        <td>.5H .5P</td>
-        <td>8.8</td>
-        <td>47</td>
-        <td>2.5</td>
-        <td></td>
-    </tr>
-
-    <tr>
-        <td>Slinger (Lead)</td>
-        <td>.3C 4.9P</td>
-        <td>5.2</td>
-        <td>1</td>
-        <td>5.2</td>
-        <td>75</td>
-        <td>.5H .5P</td>
-        <td>8.8</td>
-        <td>72</td>
-        <td>1.5</td>
-        <td></td>
-    </tr>
-
-    <!-- Notes -->
-    <tr>
-        <td colspan="11">
-            Base stats for CS Infantry. Overall stats may vary civ to civ based on
-            team/civ bonuses. Melee Cavalry deals 10% more damage, has +0.5 range,
-            but attacks 1/4 second slower than infantry counterparts.
-            Javelineer Cavalry has the same damage/range as infantry counterparts.
-            Mounted Archers deal 10% more damage, but have 5% less range than infantry counterparts.
-        </td>
-    </tr>
-
-    <!-- Gather Rates -->
-    <tr>
-        <th colspan="11">Unit Gather Rates</th>
-    </tr>
-
-    <tr>
-        <th colspan="3">Unit</th>
-        <th>Berries</th>
-        <th>Grain</th>
-        <th>Meat</th>
-        <th>Wood</th>
-        <th>Stone</th>
-        <th>Metal</th>
-        <th colspan="2"></th>
-    </tr>
-
-    <tr>
-        <td colspan="3">Civilian</td>
-        <td>1 (15)</td>
-        <td>0.5 (15)</td>
-        <td>3 (15)</td>
-        <td>0.7 (15)</td>
-        <td>0.4 (15)</td>
-        <td>0.4 (15)</td>
-        <td colspan="2"></td>
-    </tr>
-
-    <tr>
-        <td colspan="3">CS</td>
-        <td>0.5 (10)</td>
-        <td>0.25 (10)</td>
-        <td>3 (10)</td>
-        <td>0.6 (10)</td>
-        <td>0.3 (10)</td>
-        <td>0.3 (10)</td>
-        <td colspan="2"></td>
-    </tr>
-
-    <tr>
-        <td colspan="3">Slave</td>
-        <td>1.5 (15)</td>
-        <td>0.75 (15)</td>
-        <td>3 (15)</td>
-        <td>1.05 (15)</td>
-        <td>0.6 (15)</td>
-        <td>0.6 (15)</td>
-        <td colspan="2"></td>
-    </tr>
-
-    <tr>
-        <td colspan="11">
-            Base gathering rates per second. Carrying capacity is shown in parentheses.
-            Values may vary based on team/civ bonuses.
-        </td>
-    </tr>
-</table>
-	  
-<!--This ends the table, replace stuff above this, up to the next one-->  
-	  <p>Last updated May 9, 2026 ish</9>
-	  
-	 
-	
-  </div>
-</div>   
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(event) {
+      const dropdown = document.getElementById('civDropdown');
+      if (!dropdown.contains(event.target)) {
+        dropdown.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>

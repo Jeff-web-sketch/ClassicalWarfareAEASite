@@ -1,153 +1,199 @@
-<link rel="stylesheet" href="style.css">   
-<div style="display: flex;
-    gap: 10px;">
-<a href="index.html">
-<button>Home</button>
-<a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Seleucids civilization guide for Classical Warfare AEA. Features unique units, bonuses, and technologies.">
+  <meta name="keywords" content="0 A.D., Classical Warfare, AEA, Seleucids, civilization, Seleucid, phalanx">
+  <title>Seleucids - Classical Warfare AEA</title>
+  <link rel="icon" href="emblems/emblem_seleucids.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .civ-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    
+    .civ-header img {
+      width: 100px;
+      height: 100px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    
+    .civ-content {
+      text-align: left;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .civ-content h2 {
+      color: #5c3317;
+      border-bottom: 2px solid #8B4513;
+      padding-bottom: 10px;
+      margin-top: 30px;
+    }
+    
+    .civ-content h3 {
+      color: #6b4423;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+    
+    .civ-content p {
+      margin-bottom: 15px;
+    }
+    
+    .civ-content b {
+      color: #5c3317;
+      font-weight: bold;
+    }
+    
+    .bonus-section {
+      background: rgba(139, 69, 19, 0.1);
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #8B4513;
+      margin: 15px 0;
+    }
+    
+    @media (max-width: 768px) {
+      .civ-header {
+        flex-direction: column;
+      }
+      
+      .civ-content {
+        padding: 0 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+    <nav class="side-nav">
+      <a href="index.html" class="nav-link">
+        <button>Home</button>
+      </a>
+      <a href="news.html" class="nav-link">
+        <button>News</button>
+      </a>
+      <a href="screenshots.html" class="nav-link">
+        <button>Screenshots</button>
+      </a>
+      <a href="charts.html" class="nav-link">
+        <button>Charts</button>
+      </a>
+      <div class="dropdown" id="civDropdown">
+        <button class="dropbtn" onclick="toggleDropdown()">Civs ▼</button>
+        <div class="dropdown-content">
+          <a href="athen.html"><button>Athenians</button></a>
+          <a href="brit.html"><button>Britons</button></a>
+          <a href="cart.html"><button>Carthaginians</button></a>
+          <a href="gauls.html"><button>Gauls</button></a>
+          <a href="germ.html"><button>Germans</button></a>
+          <a href="han.html"><button>Han</button></a>
+          <a href="iber.html"><button>Iberians</button></a>
+          <a href="kush.html"><button>Kushites</button></a>
+          <a href="mace.html"><button>Macedonians</button></a>
+          <a href="maur.html"><button>Mauryas</button></a>
+          <a href="pers.html"><button>Persians</button></a>
+          <a href="ptol.html"><button>Ptolemies</button></a>
+          <a href="rome.html"><button>Romans</button></a>
+          <a href="sele.html"><button>Seleucids</button></a>
+          <a href="spartans.html"><button>Spartans</button></a>
+          <a href="theb.html"><button>Thebans</button></a>
+        </div>
+      </div>
+    </nav>
 
-<a href="news.html">
-<button>News</button>
-<a>
+    <div class="main-content">
+      <div class="logo">
+        <img src="logo.png" alt="Classical Warfare AEA Logo">
+      </div>
 
-<a href="screenshots.html">
-<button>Screenshots</button>
-<a>
+      <div class="container">
+        <div class="container2">
+          <div class="civ-header">
+            <h1>Seleucids</h1>
+            <img src="emblems/emblem_seleucids.png" alt="Seleucids Emblem">
+          </div>
+          
+          <div class="civ-content">
+            <h2>Civilization Bonuses</h2>
+            
+            <div class="bonus-section">
+              <h3>Diadochen state</h3>
+              <p>Structures -10% capture points, soldiers +5% dmg (excludes Mercenaries).</p>
+            </div>
+            
+            <div class="bonus-section">
+              <h3>Hellenistic Architecture</h3>
+              <p>CCs, Temples, Special buildings and Wonders +10% health and +20% capture points.</p>
+            </div>
+            
+            <div class="bonus-section">
+              <h3>Nisioi (Nisean War Horses)</h3>
+              <p>Champion Cavalry +50 health, but 10% longer train time.</p>
+            </div>
+            
+            <div class="bonus-section">
+              <h3>Early Shock Cavalry</h3>
+              <p>Cataphracts are available in p2 but 20% less dmg while costing 25% less wood in p2.</p>
+            </div>
+            
+            <div class="bonus-section">
+              <h3>Advanced aging</h3>
+              <p>CC techs cost 10% more but 25% less research time.</p>
+            </div>
+            
+            <div class="bonus-section">
+              <h3>Fertile Crescent</h3>
+              <p>Farms -25% wood cost and -75% build time.</p>
+            </div>
+            
+            <div class="bonus-section">
+              <h3>Agricultural expansion</h3>
+              <p>Farmstead technologies -100% research time.</p>
+            </div>
+            
+            <div class="bonus-section">
+              <h3>Successor Kingdoms</h3>
+              <p>Pikeman +1.5 of Crush/Hack and +1 pierce resistance but 5% slower movement.</p>
+            </div>
 
-<a href="charts.html">
-<button>Charts</button>
-<a>
-
-
-
-<div class="dropdown">
-    <button class="dropbtn">Civs</button>
-    <div class="dropdown-content">
-<a href="athen.html">
-<button>Athenians</button>
-<a>
-	
-<a href="brit.html">
-<button>Britons</button>
-<a>
-
-<a href="cart.html">
-<button>Carthaginians</button>
-<a>	
-
-<a href="gauls.html">
-<button>Gauls</button>
-<a>
-
-<a href="germ.html">
-<button>Germans</button>
-<a>	
-
-<a href="han.html">
-<button>Han</button>
-<a>	
-
-<a href="iber.html">
-<button>Iberians</button>
-<a>	
-
-<a href="kush.html">
-<button>Kushites</button>
-<a>	
-
-<a href="mace.html">
-<button>Macedonians</button>
-<a>	
-
-<a href="maur.html">
-<button>Mauryas</button>
-<a>	
-	
-<a href="pers.html">
-<button>Persians</button>
-<a>	
-
-<a href="ptol.html">
-<button>Ptolemies</button>
-<a>	
-	
-<a href="rome.html">
-<button>Romans</button>
-<a>	
-
-<a href="sele.html">
-<button>Seleucids</button>
-<a>	
-	
-<a href="spartans.html">
-<button>Spartans</button>
-<a>
-
-<a href="theb.html">
-<button>Thebans</button>
-<a>	
-	
-      <br>
+            <h2>Team Bonuses</h2>
+            
+            <div class="bonus-section">
+              <h3>Syrian Tetrapolis</h3>
+              <p>Civil Centers and Colonies -20% resource cost and -30% construction time and 25% more population.</p>
+            </div>
+            
+            <div class="bonus-section">
+              <h3>Agricultural expansion</h3>
+              <p>Farmsteads 50% less build time and wood cost.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
+  <script>
+    function toggleDropdown() {
+      const dropdown = document.getElementById('civDropdown');
+      dropdown.classList.toggle('active');
+    }
 
-</div>
-
-
-<head>
-  <title>Seleucids - Clasic Warefare AEA</title>
-  <link rel="icon" href="emblem_britons.png" type="image/png">
-</head>  
-
-
-
-
-	<div class="title">
-		<h1 style="color: white;">Seleucids</h1>
-<img style="width: 100px;" src="emblems/emblem_seleucids.png">
-
-</div>
-
-
-<div class="container">
-  <div class="contianer2"> 
-	  
-	  
-<h2>CIVILIZATION BONUSES</h2>
-<h3>Diadochen state</h3>
-Structures -10% capture points, soldiers +5%
-dmg (excludes Mercanaries).
-<h3>Hellenistic Architecture</h3>
-CCs, Tempples, Special buildngs and Wonders +10% health and +20% capture points.
-<h3>Nisioi (Nisean War Horses)</h3>
-Champion Cavalry +50 health, but 10%
-longer train time.
-<h3>Early Shock Cavalry</h3>
-Cataphracts are available in p2 but 20% less
-dmg while costing 25% less wood in p2
-<h3>Advanced aging</h3>
-CC techs cost 10% more but 25% less
-research time.
-<h3>Fertile Crescent</h3>
-Farms -25% wood cost and
--75% build time.
-<h3>Agricultural expansion</h3>
-Farmstead technologies - 100% research
-time.
-<h3>Successor Kingdoms</h3>
-Pikeman +1.5 of Crush/Hack and +1 pierce
-resistance but 5% slower movement
-<h2>TEAM BONUSES</h2>
-<h3>Syrian Tetrapolis</h3>
-Civil Centers and Colonies -20% resource cost and -30% construction time and 25% more population.
-<h3>Agricultural expansion</h3>
-Farmsteads 50% less build time and wood
-cost.
-
-  </div>
-</div>   
-
-
-
-<!--Cost: <img src="food.png">  <img src="wood.png"> <img src="metal.png"> <img src="stone.png">-->
-
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(event) {
+      const dropdown = document.getElementById('civDropdown');
+      if (!dropdown.contains(event.target)) {
+        dropdown.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>

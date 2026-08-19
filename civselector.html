@@ -1,222 +1,196 @@
-<style>
-body {
-    background-color: black;
-  }
-.container {
-  position: relative;
-  width: 100%;
-  min-height: 100vh; /* Full viewport height */
-  background-image: url('parchment copy.png');
-  background-size: cover;
-  display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center;     /* Center vertically */
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Choose your civilization in Classical Warfare AEA - Select from 16 historically accurate civilizations.">
+  <meta name="keywords" content="0 A.D., Classical Warfare, AEA, civilizations, factions, strategy game">
+  <title>Classical Warfare AEA - Civilizations</title>
+  <link rel="icon" href="icons/city_phase.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-wrapper">
+    <nav class="side-nav">
+      <a href="index.html" class="nav-link">
+        <button>Home</button>
+      </a>
+      <a href="news.html" class="nav-link">
+        <button>News</button>
+      </a>
+      <a href="screenshots.html" class="nav-link">
+        <button>Screenshots</button>
+      </a>
+      <a href="charts.html" class="nav-link">
+        <button>Charts</button>
+      </a>
+      <a href="civselector.html" class="nav-link">
+        <button>Civ Selector</button>
+      </a>
+      <div class="dropdown" id="civDropdown">
+        <button class="dropbtn" onclick="toggleDropdown()">Civ List ▼</button>
+        <div class="dropdown-content">
+          <a href="athen.html"><button>Athenians</button></a>
+          <a href="brit.html"><button>Britons</button></a>
+          <a href="cart.html"><button>Carthaginians</button></a>
+          <a href="gauls.html"><button>Gauls</button></a>
+          <a href="germ.html"><button>Germans</button></a>
+          <a href="han.html"><button>Han</button></a>
+          <a href="iber.html"><button>Iberians</button></a>
+          <a href="kush.html"><button>Kushites</button></a>
+          <a href="mace.html"><button>Macedonians</button></a>
+          <a href="maur.html"><button>Mauryas</button></a>
+          <a href="pers.html"><button>Persians</button></a>
+          <a href="ptol.html"><button>Ptolemies</button></a>
+          <a href="rome.html"><button>Romans</button></a>
+          <a href="sele.html"><button>Seleucids</button></a>
+          <a href="spartans.html"><button>Spartans</button></a>
+          <a href="theb.html"><button>Thebans</button></a>
+        </div>
+      </div>
+    </nav>
 
-.contianer2 { /* Note: Typo in class name */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  max-width: 800px;
-  padding: 20px;
-}   
-button {
-	background-color: rgb(152, 123, 74);
-	border-radius: 10px;
-	width: 10vh;
-	height: 2vh;
-	}
-    .dropdown {
-      position: relative;
-      display: inline-block;
-      
-    }
+    <div class="main-content">
+      <div class="logo">
+        <img src="logo.png" alt="Classical Warfare AEA Logo">
+      </div>
 
-    
+      <div class="container">
+        <div class="container2">
+          <h1>Choose Your Civilization</h1>
+          <h2>Select from 16 historically accurate civilizations to conquer the ancient world</h2>
+          
+          <div class="civ-grid">
+            <div class="civ-item">
+              <a href="athen.html">
+                <img src="emblems/emblem_hellenes.png" alt="Athenians Emblem">
+              </a>
+              <p>Athenians</p>
+            </div>
 
-    .dropdown-content {
-	    
-      display: none;
-      position: absolute;
-      background-color: rgb(152, 123, 74);
-      min-width: 160px;
-      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-      z-index: 1;
-      border-radius: 4px;
-    }
+            <div class="civ-item">
+              <a href="brit.html">
+                <img src="emblems/emblem_britons.png" alt="Britons Emblem">
+              </a>
+              <p>Britons</p>
+            </div>
 
-    .dropdown-content button {
-      display: block;
-      background: none;
-      border: none;
-      padding: 10px 16px;
-      width: 100%;
-      text-align: left;
-      cursor: pointer;
-      background-color: rgb(152, 123, 74);
-      
-    }
+            <div class="civ-item">
+              <a href="cart.html">
+                <img src="emblems/emblem_carthaginians.png" alt="Carthaginians Emblem">
+              </a>
+              <p>Carthaginians</p>
+            </div>
 
-    .dropdown-content button:hover {
-      background-color: rgb(125, 100, 74);
-    }
+            <div class="civ-item">
+              <a href="gauls.html">
+                <img src="emblems/emblem_celts.png" alt="Gauls Emblem">
+              </a>
+              <p>Gauls</p>
+            </div>
 
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-    .logo {
-  display: flex;
-  justify-content: center;  /* Centers horizontally */
-  align-items: center;      /* Centers vertically */
-}   
-</style>
+            <div class="civ-item">
+              <a href="germ.html">
+                <img src="emblems/emblem_germ.png" alt="Germans Emblem">
+              </a>
+              <p>Germans</p>
+            </div>
 
-<!--174, 158, 127-->
-<div style="display: flex;
-    gap: 10px;">
-<a href="index.html">
-<button>Home</button>
-<a>
+            <div class="civ-item">
+              <a href="han.html">
+                <img src="emblems/emblem_han.png" alt="Han Emblem">
+              </a>
+              <p>Han</p>
+            </div>
 
-<a href="news.html">
-<button>News</button>
-<a>
+            <div class="civ-item">
+              <a href="iber.html">
+                <img src="emblems/emblem_iberians.png" alt="Iberians Emblem">
+              </a>
+              <p>Iberians</p>
+            </div>
 
-<a href="screenshots.html">
-<button>Screenshots</button>
-<a>
+            <div class="civ-item">
+              <a href="kush.html">
+                <img src="emblems/emblem_kushites.png" alt="Kushites Emblem">
+              </a>
+              <p>Kushites</p>
+            </div>
 
-<!--<a href="changelog.html">
-<button>ChangeLog</button>
-<a>-->
+            <div class="civ-item">
+              <a href="mace.html">
+                <img src="emblems/emblem_macedonians.png" alt="Macedonians Emblem">
+              </a>
+              <p>Macedonians</p>
+            </div>
 
-<!--<a href="athen.html">
-<button>Athenians</button>
-<a>
+            <div class="civ-item">
+              <a href="maur.html">
+                <img src="emblems/emblem_mauryas.png" alt="Mauryas Emblem">
+              </a>
+              <p>Mauryas</p>
+            </div>
 
-<a href="spartans.html">
-<button>Spartans</button>
-<a>-->
-	
-	
-<a href="charts.html">
-<button>Charts</button>
-<a>
+            <div class="civ-item">
+              <a href="pers.html">
+                <img src="emblems/emblem_persian.png" alt="Persians Emblem">
+              </a>
+              <p>Persians</p>
+            </div>
 
-<div class="dropdown">
-    <button class="dropbtn">Civs</button>
-    <div class="dropdown-content">
-<a href="athen.html">
-<button>Athenians</button>
-<a>
-	
-<a href="brit.html">
-<button>Britons</button>
-<a>
+            <div class="civ-item">
+              <a href="ptol.html">
+                <img src="emblems/emblem_ptolemies.png" alt="Ptolemies Emblem">
+              </a>
+              <p>Ptolemies</p>
+            </div>
 
-<a href="cart.html">
-<button>Carthaginians</button>
-<a>	
+            <div class="civ-item">
+              <a href="rome.html">
+                <img src="emblems/emblem_romans.png" alt="Romans Emblem">
+              </a>
+              <p>Romans</p>
+            </div>
 
-<a href="gauls.html">
-<button>Gauls</button>
-<a>
+            <div class="civ-item">
+              <a href="sele.html">
+                <img src="emblems/emblem_seleucids.png" alt="Seleucids Emblem">
+              </a>
+              <p>Seleucids</p>
+            </div>
 
-<a href="germ.html">
-<button>Germans</button>
-<a>	
+            <div class="civ-item">
+              <a href="spartans.html">
+                <img src="emblems/emblem_spartans.png" alt="Spartans Emblem">
+              </a>
+              <p>Spartans</p>
+            </div>
 
-<a href="han.html">
-<button>Han</button>
-<a>	
-
-<a href="iber.html">
-<button>Iberians</button>
-<a>	
-
-<a href="kush.html">
-<button>Kushites</button>
-<a>	
-
-<a href="mace.html">
-<button>Macedonians</button>
-<a>	
-
-<a href="maur.html">
-<button>Mauryas</button>
-<a>	
-	
-<a href="pers.html">
-<button>Persians</button>
-<a>	
-
-<a href="ptol.html">
-<button>Ptolemies</button>
-<a>	
-	
-<a href="rome.html">
-<button>Romans</button>
-<a>	
-
-<a href="sele.html">
-<button>Seleucids</button>
-<a>	
-	
-<a href="spartans.html">
-<button>Spartans</button>
-<a>
-
-<a href="theb.html">
-<button>Thebans</button>
-<a>	
-
-	
-      <br>
+            <div class="civ-item">
+              <a href="theb.html">
+                <img src="emblems/emblem_thebans.png" alt="Thebans Emblem">
+              </a>
+              <p>Thebans</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
-</div>
+  <script>
+    function toggleDropdown() {
+      const dropdown = document.getElementById('civDropdown');
+      dropdown.classList.toggle('active');
+    }
 
-<head>
-  <title>Classical Warfare AEA</title>
-  <link rel="icon" href="city_phase.png" type="image/png">
-</head> 
-
- 
-
-
-
-
-<div class="container">
-  
- <!-- <div class="contianer2">	 --> 
-
-<div class="contianer2">
-<a href="athen.html">
-  <img src="emblem_athen.png" width="100" height="100">
-	  
-</a>   
-<p>Athenians</p>
-</div>
-
-
-
-
-<div class="contianer2">
-<a href="brit.html">
-  <img src="emblem_britons.png" width="100" height="100">
-</a>   
-<p>Britons</p>
-</div>
-
-
-<div class="contianer2">
-<a href="cart.html">
-  <img src="emblems/emblem_carthaginians.png" width="100" height="100">
-</a>   
-<p>Carthaginians</p>
-</div>
-
-  </div>
-</div>   
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(event) {
+      const dropdown = document.getElementById('civDropdown');
+      if (!dropdown.contains(event.target)) {
+        dropdown.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,351 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Spartans civilization guide for Classical Warfare AEA. Features unique units, bonuses, and technologies.">
+  <meta name="keywords" content="0 A.D., Classical Warfare, AEA, Spartans, civilization, Greek, hoplites">
+  <title>Spartans - Classical Warfare AEA</title>
+  <link rel="icon" href="emblems/emblem_spartans.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .civ-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    
+    .civ-header img {
+      width: 100px;
+      height: 100px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    
+    .civ-content {
+      text-align: left;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .civ-content h2 {
+      color: #5c3317;
+      border-bottom: 2px solid #8B4513;
+      padding-bottom: 10px;
+      margin-top: 30px;
+    }
+    
+    .civ-content h3 {
+      color: #6b4423;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+    
+    .civ-content p {
+      margin-bottom: 15px;
+    }
+    
+    .civ-content b {
+      color: #5c3317;
+      font-weight: bold;
+    }
+    
+    .bonus-section {
+      background: rgba(139, 69, 19, 0.1);
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #8B4513;
+      margin: 15px 0;
+    }
+    
+    @media (max-width: 768px) {
+      .civ-header {
+        flex-direction: column;
+      }
+      
+      .civ-content {
+        padding: 0 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+    <nav class="side-nav">
+      <a href="index.html" class="nav-link">
+        <button>Home</button>
+      </a>
+      <a href="news.html" class="nav-link">
+        <button>News</button>
+      </a>
+      <a href="screenshots.html" class="nav-link">
+        <button>Screenshots</button>
+      </a>
+      <a href="charts.html" class="nav-link">
+        <button>Charts</button>
+      </a>
+      <div class="dropdown" id="civDropdown">
+        <button class="dropbtn" onclick="toggleDropdown()">Civs ▼</button>
+        <div class="dropdown-content">
+          <a href="athen.html"><button>Athenians</button></a>
+          <a href="brit.html"><button>Britons</button></a>
+          <a href="cart.html"><button>Carthaginians</button></a>
+          <a href="gauls.html"><button>Gauls</button></a>
+          <a href="germ.html"><button>Germans</button></a>
+          <a href="han.html"><button>Han</button></a>
+          <a href="iber.html"><button>Iberians</button></a>
+          <a href="kush.html"><button>Kushites</button></a>
+          <a href="mace.html"><button>Macedonians</button></a>
+          <a href="maur.html"><button>Mauryas</button></a>
+          <a href="pers.html"><button>Persians</button></a>
+          <a href="ptol.html"><button>Ptolemies</button></a>
+          <a href="rome.html"><button>Romans</button></a>
+          <a href="sele.html"><button>Seleucids</button></a>
+          <a href="spartans.html"><button>Spartans</button></a>
+          <a href="theb.html"><button>Thebans</button></a>
+        </div>
+      </div>
+    </nav>
 
-<!--<style>
-body {
-    background-color: black;
-  }
-.container {
-  position: relative;
-  width: 100%;
-  min-height: 100vh; /* Full viewport height */
-  background-image: url('parchment copy.png');
-  background-size: cover;
-  display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center;     /* Center vertically */
-}
+    <div class="main-content">
+      <div class="logo">
+        <img src="logo.png" alt="Classical Warfare AEA Logo">
+      </div>
 
-.contianer2 { /* Note: Typo in class name */
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  text-align: left;
-  max-width: 800px;
-  padding: 20px;
-  }
-  img {
-		width: 30px;
-		}
-button {
-	background-color: rgb(152, 123, 74);
-	border-radius: 5px;
-	width: 10vh;
-	height: 2vh;
-	}
-</style>-->
+      <div class="container">
+        <div class="container2">
+          <div class="civ-header">
+            <h1>Spartans</h1>
+            <img src="emblems/emblem_spartans.png" alt="Spartans Emblem">
+          </div>
+          
+          <div class="civ-content">
+            <h2>Civ Bonuses</h2>
+            
+            <div class="bonus-section">
+              <h3>Greek Olympians</h3>
+              <p>Certain Champs and Special Infantry 3% faster walk speed, Melee units +5% damage, Ranged units +3% damage, 5% more accurate, and +1 range.</p>
+            </div>
+            
+            <div class="bonus-section">
+              <h3>Hellenic Architecture</h3>
+              <p>Civic Centers, Temples, Special Structures, and Wonders +10% health and +20% capture points.</p>
+            </div>
+            
+            <div class="bonus-section">
+              <h3>Agoge</h3>
+              <p>Champion Hoplites are available in phase 1 with -10% repeat time, as Young Hoplites (Paidiskoi) they cost -50 food and metal and take only 16s to train. However, they do 25% less damage, have -2 hack/pierce resistance and -25 health. They promote to normal Spartiates (Hebontes) which are available to train in Town Phase and can eventually promote to Olympic Spartiates (Hippeis).</p>
+            </div>
+            
+            <div class="bonus-section">
+              <h3>Born To Fight</h3>
+              <p>Melee infantry +5% more damage.</p>
+            </div>
+            
+            <div class="bonus-section">
+              <h3>Perioeci Class</h3>
+              <p>Melee and Ranged</p>
+            </div>
 
-<link rel="stylesheet" href="style.css">   
-<div style="display: flex;
-    gap: 10px;">
-<a href="index.html">
-<button>Home</button>
-<a>
+            <h2>Team Bonuses</h2>
+            <div class="bonus-section">
+              <p>Heroes train for free; Melee Infantry Heroes 15% more Pierce/Hack/Crush damage. Infantry +1 hack/pierce resistance and promote 10% faster.</p>
+            </div>
 
-<a href="news.html">
-<button>News</button>
-<a>
+            <h2>Units</h2>
+            
+            <h3>Heroes</h3>
+            
+            <div class="bonus-section">
+              <b>Leonidas</b>
+              <p>Available town phase, but 1/2 health and 20% less dmg. Gains the health and dmg when you go city phase. Champion Infantry +15% melee attack, +1.5 hack/pierce, +5 Crush resistances and +25 health. Spearman 5% walk and 10% run speed. Available on p3 version only</p>
+            </div>
 
-<a href="screenshots.html">
-<button>Screenshots</button>
-<a>
+            <div class="bonus-section">
+              <b>Agis</b>
+              <p>Own and allied soldiers -40% metal cost and -25% training time. Agis 33% health and 5 of each resistance</p>
+            </div>
 
-<!--<a href="changelog.html">
-<button>ChangeLog</button>
-<a>-->
-<!--<a href="athen.html">
-<button>Athenians</button>
-<a>
-	
-<a href="spartans.html">
-<button>Spartans</button>
-<a>-->
-	
-<a href="charts.html">
-<button>Charts</button>
-<a>
+            <div class="bonus-section">
+              <b>Brasidas</b>
+              <p>Javelineers +2 crush, hack, pierce resistance, +3 capture attack. Range 60. Helots promote 50% faster to neodamodes</p>
+            </div>
 
+            <h2>Unique Structures</h2>
+            <div class="bonus-section">
+              <p><b>SKIAS</b> - Spartan Senate<br>
+              <b>PHEIDEITION</b> - Military Mess Hall<br>
+              <b>PERIOECIS KOMH</b> - Perioikoi Camp</p>
+            </div>
 
+            <h2>Unique Technologies</h2>
+            
+            <div class="bonus-section">
+              <h3>Krypteia</h3>
+              <p>Cost: 300 food, 300 metal, 40 time (Town Phase)<br>
+              Champions +10% melee/ranged attack damage, heroes 25% melee attack but all infantry 10% more train time and helots 20% less health.</p>
+            </div>
 
+            <div class="bonus-section">
+              <h3>Improved Fletching (forge)</h3>
+              <p>Cost: 200 food, 100 metal, 20 time (Town Phase)<br>
+              Soldiers +10% ranged attack damage.</p>
+            </div>
 
-<div class="dropdown">
-    <button class="dropbtn">Civs</button>
-    <div class="dropdown-content">
-<a href="athen.html">
-<button>Athenians</button>
-<a>
-	
-<a href="brit.html">
-<button>Britons</button>
-<a>
+            <div class="bonus-section">
+              <h3>Iron Arrowheads (forge)</h3>
+              <p>Cost: 350 food, 250 metal, 40 time (Town Phase)<br>
+              Soldiers +15% ranged attack damage.</p>
+            </div>
 
-<a href="cart.html">
-<button>Carthaginians</button>
-<a>	
+            <div class="bonus-section">
+              <h3>Iron Weapons (forge)</h3>
+              <p>Cost: 350 food, 250 metal, 40 time (Town Phase)<br>
+              Soldiers +10% attack damage. Spartiates and Skiritai an additional 10%, but Champion spearmen and +10% train time.</p>
+            </div>
 
-<a href="gauls.html">
-<button>Gauls</button>
-<a>
+            <div class="bonus-section">
+              <h3>SPOLAS (quilted body armor)(forge)</h3>
+              <p>Cost: 350 food, 250 metal, 40 time (Town Phase)<br>
+              Soldiers +1 pierce and +0.5 crush resistance. Champions an additional +0.5 hack.</p>
+            </div>
 
-<a href="germ.html">
-<button>Germans</button>
-<a>	
+            <div class="bonus-section">
+              <h3>Metal Rim (forge)</h3>
+              <p>Cost: 350 food, 250 metal, 40 time (Town Phase)<br>
+              Soldiers +1.5 pierce and +0.5 crush resistance. Champions additional +0.5 pierce.</p>
+            </div>
 
-<a href="han.html">
-<button>Han</button>
-<a>	
+            <div class="bonus-section">
+              <h3>Trolobate Arrowheads (forge)</h3>
+              <p>Cost: 500 food, 400 metal, 60 time (City Phase)<br>
+              Soldiers +20% ranged attack damage.</p>
+            </div>
 
-<a href="iber.html">
-<button>Iberians</button>
-<a>	
+            <div class="bonus-section">
+              <h3>Carburization (forge)</h3>
+              <p>Cost: 500 food, 400 metal, 60 time (City Phase)<br>
+              Soldiers +10% melee attack damage. Spartiates and Skiritai an additional 10%, but Champion spearmen an additional 10% train time.</p>
+            </div>
 
-<a href="kush.html">
-<button>Kushites</button>
-<a>	
+            <div class="bonus-section">
+              <h3>Mail Body Armor (forge)</h3>
+              <p>Cost: 500 food, 400 metal, 60 time (City Phase)<br>
+              Soldiers +1 hack and +1 crush resistance. Champions additional +1 hack resistance.</p>
+            </div>
 
-<a href="mace.html">
-<button>Macedonians</button>
-<a>	
-
-<a href="maur.html">
-<button>Mauryas</button>
-<a>	
-	
-<a href="pers.html">
-<button>Persians</button>
-<a>	
-
-<a href="ptol.html">
-<button>Ptolemies</button>
-<a>	
-	
-<a href="rome.html">
-<button>Romans</button>
-<a>	
-
-<a href="sele.html">
-<button>Seleucids</button>
-<a>	
-	
-<a href="spartans.html">
-<button>Spartans</button>
-<a>
-
-<a href="theb.html">
-<button>Thebans</button>
-<a>	
-	
-      <br>
+            <div class="bonus-section">
+              <h3>Improved Shield Alloys (forge)</h3>
+              <p>Cost: 500 food, 400 metal, 60 time (City Phase)<br>
+              Soldiers +1 hack and +1 crush resistance. Champions additional +1 hack resistance.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
-
-
-</div>
-
-
-
-	<div class="title">
-		<h1 style="color: white;">Spartans</h1>
-<img style="width: 100px;" src="emblem_spartans.png">
-
-</div>
-
-
-<head>
-  <title>Spartan - Clasic Warefare AEA</title>
-  <link rel="icon" href="emblem_spartan.png" type="image/png">
-</head>   
-
-<div class="container">
-  <div class="contianer2"> <!-- Note: Typo in class name -->
-    
-<h2>Civ Bonuses</h2>
-
-<h3>Greek Olympians</h3>
-<p>Certain Champs and Special Infantry 3% fater walk speed, Melee units +5% damage, Ranged units +3% damage, 5% more accurate, and +1 range.</p>
-<!--<p>Infantry 3% faster walk speed. Melee units 5% more damage, ranged units 3% more damage and 5% more accurate and +1 range.</p>-->
-
-<h3>Hellenic Architecture</h3>
-<p>Civic Centers, Temples, Special Structures, and Wounders +10% health and +20% capture points.</p>
-
-<h3>Agoge</h3>
-<p>Champion Hoplites are available in phase 1 with -10% repeat time, as Young Hoplites (Paidiskoi) they cost -50 food and metal and take only 16s to train. However, they do 25% less damage, have -2 hack/pierce resistance and -25 health. They premote to normal Spartiates (Hebontes) which are aviallble to train in Town Phase and can eventually promote to Olympic Spartiates (Hippeis).</p>
-
-<h3>Born To Fight</h3>
-<p>Melee infantry +5% more damage.</p>
-
-<h3>Perioeci Class</h3>
-<p>Melee and Ranged</p>
-<!--<h3>Champions</h3>
-<p>Champion Hoplites are available in phase 1, and may promote to Hippeis. They attack 10% faster than other champion spearman. Phase 1 champions take 20% less train but <br>have 50 less health, -1 of hack and peirce resistance and do 15% less dmg.  It is gained back through phasing up</p>
-
-<h3>Melee Infantry</h3>
-<p>Melee Infantry 5% more dmg and gains an additional 5% p2 but Sparta does not have Will to Fight.<p>
-
-<h3>Perioikoi Class</h3>
-<p>Melee and Ranged 10% less dmg, Ranged, 10% less accurate. However, they gather resources 5% faster, have 5% faster walk speed, cost 10 less wood and train 10% faster</p>
-
-<h3>Helots</h3>
-<p>50 health, -20% dmg, 15% less accurate -5 range and +250 repeate time but train 15% faster and gather resources 25% faster and don't count torwards population.</p>
-
-<h3>Women</h3>
-<p>Women 5% faster gathering/build rates rate, and 2% faster movement speed. Also 50% melee dmg and 0.5 of each resistance.</p>
-
-<h3>Warrior Culture</h3>
-<p>-10% maximum population limit.</p>-->
-
-
-
-<h3>Team Bonuses</h3>
-
-<p>Heroes train for free; Melee Infantry Heroes 15% more Pierce/Hack/Crush dm
-
-Infantry +1 hack/pierce resistance and promote 10% faster.</p>
-
-
-
-<h2>Units</h2>
-
-
-
-<!--<p>Spartan Hoplite <br>
-
-CS Spearman and Javelineers are Periokoi trained from camps "Roman"<br>
-
-Helot Stone throwers, Javelineers trained from tents. 3 without any Champions, 2 more for each champion you have.<br>
-
-Scout trained from cc<br>
-
-Spartriates trained from CC or Ssystion<br>
-
-Skiritai trained from camps "Roman" fast moving, less armor "scout/patrol/type unit"<br>
-
-Cretan Archers recruited from markets</p>-->
-
-
-
-<h3>Heroes</h3>
-
-<b>Leonidas</b><br><p> Available town phase, but 1/2 health and 20% less dmg. Gains the health and dmg when you go city phase
-
-Champion Infantry +15% melee attack, +1.5 hack/pierce, +5 Crush resistances<br>and +25 health.
-
-Spearman 5% walk and 10% run speed. Available on p3 version only</p>
-
-
-
-<b>Agis</b>
-
-<p>Own and allied soldiers -40% metal cost and -25% training time.
-
-Agis 33% health and 5 of each resistance</p>
-
-
-
-<b>Brasidas</b>
-
-<p>Javelineers +2 crush, hack, pierce resistance, +3 capture attack. Range 60
-
-Helots promote 50% faster to neodamodes</p>
-
-
-<!--<h2>Phase Bonuses</h2>
-<h3>Town Phase bonusses</h3>
-
-<p>structures .5 capture garrison rate<br>
-
-15% more territory<br>
-
-CC 25% more garrison, +10 range, +2.5C/H/P resistances<br>
-
-Champion Spearman +0.5H/P +25 Health<br>
-
-Infantry 5% more melee dmg<br>
-
-Helot 10% faster train time -125 repeat time</p>
-
-
-
-
-<h3>City Phase bonuses</h3>
-
-<p>Structures 1 capture garrison rate<br>
-
-20%% more territory<br>
-
-Civic Center 40% more garrison, +5 range, 2.5C 5H 7.5P resistances<br>
-
-Champion Spearman +25 Health<br>
-
-Helot 10% faster train time -125 repeat time<br>
-
-Infantry +0.5P resistances except helots<br>
-
-Leonidas 20% more DMG and double Health</p>-->
-
-<!--<h2>Units</h2>
-
-<h3>SPARTIÃTIS(Spartan Woman)</h3> 
-<p>Cost: 40<img src="food.png">  1<img src="population.png">  8<img src="time.png">  <img src="village_phase.png"><br>
-Attack (Dagger): 2.3 hack, range 2 meters, interval 1 second</p>
-
-<h3>SPARTIÃTES(Spartan Hoplite)</h3> 
-<p>Cost: 150<img src="food.png">  50<img src="wood.png">  100<img src="metal.png">  1<img src="population.png">  21<img src="time.png">  <img src="village_phase.png"><br>
-Attack (Spear): 6 hack, range: 2 meters, interval 1 second</p>-->
-
-
-
-
-<h2>Unique Structures</h2>
-<p>SKIAS - Spartan Senate<br>
-PHEIDEITION - Military Mess Hall<br>
-PERIOECIS KOMH - Perioikoi Camp<br>
-</p>
-
-
-<h2>Unique Technologies</h2>
-<!--<h3>Helot Economy</h3>
-<p> Cost: 300<img src="food.png">  300<img src="wood.png">  150<img src="metal.png">  150<img src="stone.png">  40<img src="time.png">  <img src="village_phase.png"> <br>Helots +100% grain gather rate, +25% wood/metal/stone but champions take 25% longer to train</p>
--->
-<<h3>Krypteia</h3> <p>Cost: 300<img src="food.png">  300<img src="metal.png">  40<img src="time.png">  <img src="town_phase.png"><br>Champions +10% melee/ranged attack damage, heroes 25% melee attack but all infantry 10% more train time and helots 20% less health.</p>
-	
-<!--<h3>XIPHOS (Side Arms)(SKIAS)</h3> 
-<p>Cost: 200<img src="food.png">  200<img src="wood.png">  50<img src="metal.png">  20<img src="time.png">  <img src="town_phase.png"><br>
-Champion Javelineers +10% ranged attack damage and +3 range, but all champions +10% train time.</p>-->
-
-<h3>Improved Fletching (forge)</h3> 
-<p>Cost: 200<img src="food.png">  100<img src="metal.png">  20<img src="time.png">  <img src="town_phase.png"><br>
-Soldiers +10% ranged attack damage.</p>
-
-<h3>Iron Arrowheads (forge)</h3> <p>Cost: 350<img src="food.png">  250<img src="metal.png">  40<img src="time.png">  <img src="town_phase.png"><br>
-Soldiers +15% ranged attack damage.</p>
-
-<h3>Iron Weapons (forge)</h3> <p> Cost: 350<img src="food.png">  250<img src="metal.png">  40<img src="time.png">  <img src="town_phase.png"><br>
-Soldiers +10% attack damage. Spartiates and Skiritai an additional 10%, but Champion spearmen and +10% train time.</p>
-
-<h3>SPOLAS (quilted body armor)(forge)</h3> <p>Cost: 350<img src="food.png">  250<img src="metal.png">  40<img src="time.png">  <img src="town_phase.png"> <br>
-Soldiers +1 pierce and +0.5 crush resistance. Champions an additional +0.5 hack.</p>
-
-<h3>Metal Rim (forge)</h3> <p>Cost: 350<img src="food.png">  250<img src="metal.png">  40<img src="time.png">  <img src="town_phase.png"> <br>
-Soldiers +1.5 pierce and +0.5 crush resistance. Champions additional +0.5 pierce.</p>
-
-<h3>Trolobate Arrowheads (forge)</h3> <p>Cost: 500<img src="food.png">  400<img src="metal.png">  60<img src="time.png">  <img src="city_phase.png"><br> 
-Soldiers +20% ranged attack damage.</p>
-
-<h3>Carburization (forge)</h3> <p>Cost: 500<img src="food.png">  400<img src="metal.png">  60<img src="time.png">  <img src="city_phase.png"><br>
-Soldiers +10% melee attack damage. Spartiates and Skiritai an additional 10%, but Champion spearmen an additional 10% train time.</p>
-
-<h3>Mail Body Armor (forge)</h3> <p>Cost: 500<img src="food.png">  400<img src="metal.png">  60<img src="time.png">  <img src="city_phase.png"><br>
-Soldiers +1 hack and +1 crush resistance. Champions additional +1 hack resistance.</p>
-
-<h3>Improved Shield Alloys (forge)</h3> <p>Cost: 500<img src="food.png">  400<img src="metal.png">  60<img src="time.png">  <img src="city_phase.png"><br> 
-Soldiers +1 hack and +1 crush resistance. Champions additional +1 hack resistance.</p>
-
-
-
-</div>
-
-<!--Cost: <img src="food.png">  <img src="wood.png"> <img src="metal.png"> <img src="stone.png">-->
-
-
-  </div>
-</div>   
+  <script>
+    function toggleDropdown() {
+      const dropdown = document.getElementById('civDropdown');
+      dropdown.classList.toggle('active');
+    }
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(event) {
+      const dropdown = document.getElementById('civDropdown');
+      if (!dropdown.contains(event.target)) {
+        dropdown.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>

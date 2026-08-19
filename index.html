@@ -1,287 +1,92 @@
-<!--<style>
-  body {
-    background-color: black;
-  }
-  h1, h2, h3, p, b {
-	  color: black;
-	  padding-left: 60px;
-	 
-	  
-	  }
-  p {
-	  line-height: 2;
-	  }
-  .container {
-	  position: relative;
-      width: 2500px;
-      height: 3000px;
-      background-size: cover;
-	  background-image: url('parchment copy.png');
-
-	  }
-	img {
-		width: 30px;
-		}
-	.contianer2 {
-		
-			  display: flex;
-  flex-wrap: wrap; /* Required for align-content to have an effect */
-  height: 300px;
-  align-content: center;
-		}
-</style>  
-
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>Clasic Warefare AEA</title>
-  <link rel="icon" href="city_phase.png" type="image/png">
-</head>   
- 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Classical Warfare AEA - A more in-depth version of 0 A.D. with historical accuracy, new units and technologies.">
+  <meta name="keywords" content="0 A.D., Classical Warfare, AEA, historical accuracy, strategy game, mod">
+  <title>Classical Warfare AEA</title>
+  <link rel="icon" href="icons/city_phase.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-wrapper">
+    <nav class="side-nav">
+      <a href="index.html" class="nav-link">
+        <button>Home</button>
+      </a>
+      <a href="news.html" class="nav-link">
+        <button>News</button>
+      </a>
+      <a href="screenshots.html" class="nav-link">
+        <button>Screenshots</button>
+      </a>
+      <a href="charts.html" class="nav-link">
+        <button>Charts</button>
+      </a>
+      <a href="civselector.html" class="nav-link">
+        <button>Civ Selector</button>
+      </a>
+      <div class="dropdown" id="civDropdown">
+        <button class="dropbtn" onclick="toggleDropdown()">Civ List ▼</button>
+        <div class="dropdown-content">
+          <a href="athen.html"><button>Athenians</button></a>
+          <a href="brit.html"><button>Britons</button></a>
+          <a href="cart.html"><button>Carthaginians</button></a>
+          <a href="gauls.html"><button>Gauls</button></a>
+          <a href="germ.html"><button>Germans</button></a>
+          <a href="han.html"><button>Han</button></a>
+          <a href="iber.html"><button>Iberians</button></a>
+          <a href="kush.html"><button>Kushites</button></a>
+          <a href="mace.html"><button>Macedonians</button></a>
+          <a href="maur.html"><button>Mauryas</button></a>
+          <a href="pers.html"><button>Persians</button></a>
+          <a href="ptol.html"><button>Ptolemies</button></a>
+          <a href="rome.html"><button>Romans</button></a>
+          <a href="sele.html"><button>Seleucids</button></a>
+          <a href="spartans.html"><button>Spartans</button></a>
+          <a href="theb.html"><button>Thebans</button></a>
+        </div>
+      </div>
+    </nav>
 
-<div style="display: flex;
-    gap: 10px;">
-	    
-</div>	    
-<a href="index.html">
-<button>Home</button>
-<a>
+    <div class="main-content">
+      <div class="logo">
+        <img src="logo.png" alt="Classical Warfare AEA Logo">
+      </div>
 
-<a href="changelog.html">
-<button>ChangeLog</button>
-<a>
-
-<a href="spartans.html">
-<button>Spartans</button>
-<a>
-	
-	
-<div class="container">
-	<br>
-		<br>
-			<div class="container2">
-<h1>The Official Classical Warfare AEA Manual</h1>
-<h2>A more indepth version of 0AD with an emphasis <br>on historical accuracy. New units and techs but a<br> similar aproach to the game.</h2>
-<p><a href="https://mod.io/g/0ad/m/classical-warfare-aea#description">Download here<a></p>
-<img style="width: 30%;" src="bg2.png"><br><p></p>
-<img style="width: 30%;" src="bg3.png"><br><p></p>
-<img style="width: 30%;" src="bg4.png"><br><p></p>
-<p>Made for 0 A.D. <a href="https://play0ad.com/">https://play0ad.com/</a>
-<p>Icons from 0ad</p>
-</div>
-</div>-->
-<style>
-body {
-    background-color: black;
-  }
-.container {
-  position: relative;
-  width: 100%;
-  min-height: 100vh; /* Full viewport height */
-  background-image: url('parchment copy.png');
-  background-size: cover;
-  display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center;     /* Center vertically */
-}
-
-.contianer2 { /* Note: Typo in class name */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  max-width: 800px;
-  padding: 20px;
-}   
-button {
-	background-color: rgb(152, 123, 74);
-	border-radius: 10px;
-	width: 10vh;
-	height: 2vh;
-	}
-    .dropdown {
-      position: relative;
-      display: inline-block;
-      
-    }
-
-    
-
-    .dropdown-content {
-	    
-      display: none;
-      position: absolute;
-      background-color: rgb(152, 123, 74);
-      min-width: 160px;
-      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-      z-index: 1;
-      border-radius: 4px;
-    }
-
-    .dropdown-content button {
-      display: block;
-      background: none;
-      border: none;
-      padding: 10px 16px;
-      width: 100%;
-      text-align: left;
-      cursor: pointer;
-      background-color: rgb(152, 123, 74);
-      
-    }
-
-    .dropdown-content button:hover {
-      background-color: rgb(125, 100, 74);
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-    .logo {
-  display: flex;
-  justify-content: center;  /* Centers horizontally */
-  align-items: center;      /* Centers vertically */
-}   
-</style>
-
-<!--174, 158, 127-->
-<div style="display: flex;
-    gap: 10px;">
-<a href="index.html">
-<button>Home</button>
-<a>
-
-<a href="news.html">
-<button>News</button>
-<a>
-
-<a href="screenshots.html">
-<button>Screenshots</button>
-<a>
-
-<!--<a href="changelog.html">
-<button>ChangeLog</button>
-<a>-->
-
-<!--<a href="athen.html">
-<button>Athenians</button>
-<a>
-
-<a href="spartans.html">
-<button>Spartans</button>
-<a>-->
-	
-	
-<a href="charts.html">
-<button>Charts</button>
-<a>
-
-<div class="dropdown">
-	<a href="civselector.html"> 
-    <button class="dropbtn">Civs</button>
-    </a>
-    <div class="dropdown-content">
-<a href="athen.html">
-<button>Athenians</button>
-<a>
-	
-<a href="brit.html">
-<button>Britons</button>
-<a>
-
-<a href="cart.html">
-<button>Carthaginians</button>
-<a>	
-
-<a href="gauls.html">
-<button>Gauls</button>
-<a>
-
-<a href="germ.html">
-<button>Germans</button>
-<a>	
-
-<a href="han.html">
-<button>Han</button>
-<a>	
-
-<a href="iber.html">
-<button>Iberians</button>
-<a>	
-
-<a href="kush.html">
-<button>Kushites</button>
-<a>	
-
-<a href="mace.html">
-<button>Macedonians</button>
-<a>	
-
-<a href="maur.html">
-<button>Mauryas</button>
-<a>	
-	
-<a href="pers.html">
-<button>Persians</button>
-<a>	
-
-<a href="ptol.html">
-<button>Ptolemies</button>
-<a>	
-	
-<a href="rome.html">
-<button>Romans</button>
-<a>	
-
-<a href="sele.html">
-<button>Seleucids</button>
-<a>	
-	
-<a href="spartans.html">
-<button>Spartans</button>
-<a>
-
-<a href="theb.html">
-<button>Thebans</button>
-<a>	
-
-	
-      <br>
+      <div class="container">
+        <div class="container2">
+          <h1>The Official Classical Warfare AEA Manual</h1>
+          <h2>A more in-depth version of 0 A.D., with an emphasis on historical accuracy.
+          New units and technologies, but a similar approach to the game.
+          In simple words, we think it makes the game better.</h2>
+          <p>Latest Stable Release (0.28.9): <a href="https://mod.io/g/0ad/m/classical-warfare-aea">Download here</a></p>
+          <p>Latest Release (0.28.9): <a href="https://github.com/Emacz2/classical-warefare-aea">Download here</a></p>
+          <p>Forum: <a href="https://wildfiregames.com/forum/topic/140701-classical-warfare-aea/">Click Me!</a></p>
+          <p>Please report errors or problems to the forum</p>
+          <img class="screenshot" src="bgs/bg1.png" alt="Game Screenshot 1">
+          <img class="screenshot" src="bgs/bg2.png" alt="Game Screenshot 2">
+          <img class="screenshot" src="bgs/bg3.png" alt="Game Screenshot 3">
+          <p>Made for 0 A.D. <a href="https://play0ad.com/">https://play0ad.com/</a></p>
+        </div>
+      </div>
     </div>
   </div>
 
-</div>
+  <script>
+    function toggleDropdown() {
+      const dropdown = document.getElementById('civDropdown');
+      dropdown.classList.toggle('active');
+    }
 
-<head>
-  <title>Classical Warfare AEA</title>
-  <link rel="icon" href="city_phase.png" type="image/png">
-</head> 
-
- 
-<div class="logo">
-	<img style="width: 30%;" src="logo.png">
-</div> 
-
-
-
-
-<div class="container">
-  
-  <div class="contianer2">	  
-
-    <h1>The Official Classical Warfare AEA Manual</h1>
-    <h2>A more in-depth version of 0 A.D., with an emphasis on historical accuracy.
-New units and technologies, but a similar approach to the game.
-In simple words, we think it makes the game better.</h2>
-    <p>Latest Stable Release (0.28.9): <a href="https://mod.io/g/0ad/m/classical-warfare-aea">Download here</a></p>
-    <p>Latest Release (0.28.9): <a href="https://github.com/Emacz2/classical-warefare-aea">Download here</a></p>
-    <p>Forum: <a href="https://wildfiregames.com/forum/topic/140701-classical-warfare-aea/">Click Me!</a></p>
-    <p>Please report errors or problems to the forum</p>
-    <img style="width: 100%;" src="bg2.png"><br>
-    <img style="width: 100%;" src="bg3.png"><br>
-    <img style="width: 100%;" src="bg4.png"><br>
-	<!--<img style="width: 100%;" src="bg5.png"><br>
-	<img style="width: 100%;" src="bg6.png"><br>-->
-    <p>Made for 0 A.D. <a href="https://play0ad.com/">https://play0ad.com/</a></p>
-    <!--<p>Icons from 0ad</p>-->
-  </div>
-</div>   
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(event) {
+      const dropdown = document.getElementById('civDropdown');
+      if (!dropdown.contains(event.target)) {
+        dropdown.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,235 +1,98 @@
-<style>
-body {
-    background-color: black;
-  }
-.container {
-  position: relative;
-  width: 100%;
-  min-height: 100vh; /* Full viewport height */
-  background-image: url('parchment copy.png');
-  background-size: cover;
-  display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center;     /* Center vertically */
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Latest news and updates for Classical Warfare AEA mod.">
+  <meta name="keywords" content="0 A.D., Classical Warfare, AEA, news, updates, patch notes">
+  <title>News - Classical Warfare AEA</title>
+  <link rel="icon" href="icons/city_phase.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-wrapper">
+    <nav class="side-nav">
+      <a href="index.html" class="nav-link">
+        <button>Home</button>
+      </a>
+      <a href="news.html" class="nav-link">
+        <button>News</button>
+      </a>
+      <a href="screenshots.html" class="nav-link">
+        <button>Screenshots</button>
+      </a>
+      <a href="charts.html" class="nav-link">
+        <button>Charts</button>
+      </a>
+      <div class="dropdown" id="civDropdown">
+        <button class="dropbtn" onclick="toggleDropdown()">Civs ▼</button>
+        <div class="dropdown-content">
+          <a href="athen.html"><button>Athenians</button></a>
+          <a href="brit.html"><button>Britons</button></a>
+          <a href="cart.html"><button>Carthaginians</button></a>
+          <a href="gauls.html"><button>Gauls</button></a>
+          <a href="germ.html"><button>Germans</button></a>
+          <a href="han.html"><button>Han</button></a>
+          <a href="iber.html"><button>Iberians</button></a>
+          <a href="kush.html"><button>Kushites</button></a>
+          <a href="mace.html"><button>Macedonians</button></a>
+          <a href="maur.html"><button>Mauryas</button></a>
+          <a href="pers.html"><button>Persians</button></a>
+          <a href="ptol.html"><button>Ptolemies</button></a>
+          <a href="rome.html"><button>Romans</button></a>
+          <a href="sele.html"><button>Seleucids</button></a>
+          <a href="spartans.html"><button>Spartans</button></a>
+          <a href="theb.html"><button>Thebans</button></a>
+        </div>
+      </div>
+    </nav>
 
-.contianer2 { /* Note: Typo in class name */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  max-width: 800px;
-  padding: 20px;
-}   
-button {
-	background-color: rgb(152, 123, 74);
-	border-radius: 10px;
-	width: 10vh;
-	height: 2vh;
-	}
-    .dropdown {
-      position: relative;
-      display: inline-block;
-      
-    }
+    <div class="main-content">
+      <div class="logo">
+        <img src="logo.png" alt="Classical Warfare AEA Logo">
+      </div>
 
-    
-
-    .dropdown-content {
-	    
-      display: none;
-      position: absolute;
-      background-color: rgb(152, 123, 74);
-      min-width: 160px;
-      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-      z-index: 1;
-      border-radius: 4px;
-    }
-
-    .dropdown-content button {
-      display: block;
-      background: none;
-      border: none;
-      padding: 10px 16px;
-      width: 100%;
-      text-align: left;
-      cursor: pointer;
-      background-color: rgb(152, 123, 74);
-      
-    }
-
-    .dropdown-content button:hover {
-      background-color: rgb(125, 100, 74);
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-    .logo {
-  display: flex;
-  justify-content: center;  /* Centers horizontally */
-  align-items: center;      /* Centers vertically */
-}   
-.containerfornews {
-  display: flex;
-  gap: 20px; /* Adds space between the two sections */
-}
-
-.sectionfornews {
-  flex: 1; /* Each section takes equal width */
-  padding: 20px;
-}   
-</style>
-
-<!--174, 158, 127-->
-<div style="display: flex;
-    gap: 10px;">
-<a href="index.html">
-<button>Home</button>
-<a>
-
-<a href="news.html">
-<button>News</button>
-<a>
-
-<a href="screenshots.html">
-<button>Screenshots</button>
-<a>
-
-<!--<a href="changelog.html">
-<button>ChangeLog</button>
-<a>-->
-
-<!--<a href="athen.html">
-<button>Athenians</button>
-<a>
-
-<a href="spartans.html">
-<button>Spartans</button>
-<a>-->
-	
-	
-<a href="charts.html">
-<button>Charts</button>
-<a>
-
-<div class="dropdown">
-    <button class="dropbtn">Civs</button>
-    <div class="dropdown-content">
-<a href="athen.html">
-<button>Athenians</button>
-<a>
-	
-<a href="brit.html">
-<button>Britons</button>
-<a>
-
-<a href="cart.html">
-<button>Carthaginians</button>
-<a>	
-
-<a href="gauls.html">
-<button>Gauls</button>
-<a>
-
-<a href="germ.html">
-<button>Germans</button>
-<a>	
-
-<a href="han.html">
-<button>Han</button>
-<a>	
-
-<a href="iber.html">
-<button>Iberians</button>
-<a>	
-
-<a href="kush.html">
-<button>Kushites</button>
-<a>	
-
-<a href="mace.html">
-<button>Macedonians</button>
-<a>	
-
-<a href="maur.html">
-<button>Mauryas</button>
-<a>	
-	
-<a href="pers.html">
-<button>Persians</button>
-<a>	
-
-<a href="ptol.html">
-<button>Ptolemies</button>
-<a>	
-	
-<a href="rome.html">
-<button>Romans</button>
-<a>	
-
-<a href="sele.html">
-<button>Seleucids</button>
-<a>	
-	
-<a href="spartans.html">
-<button>Spartans</button>
-<a>
-
-<a href="theb.html">
-<button>Thebans</button>
-<a>	
-
-	
-      <br>
+      <div class="container">
+        <div class="container2">
+          <h1>News & Updates</h1>
+          
+          <div class="containerfornews">
+            <!--updates for mod-->
+            <div class="sectionfornews">
+              <h2>For the Mod</h2>
+              <h3>Upcoming Update 0.28.10, Movement (7/1/26)</h3>
+              <p>Speeds refreshed from simulation(31).zip templates.<br>
+              Unit/Infantry/Citizen Cavalry base = 8.8; <br>Champion Infantry
+              intended base = 8.9; <br>Hero Infantry base = 9.0.</p>
+            </div>
+            
+            <!--updates for website-->
+            <div class="sectionfornews">	
+              <h2>For the Website</h2>
+              <h3>Added Screenshots page (7/2/26)</h3>
+              <p>If you want your screenshot on here, post it in the forum</p>
+              
+              <h3>Added news page (7/1/26)</h3>
+            </div>
+          </div>   
+        </div>
+      </div>
     </div>
   </div>
 
-</div>
+  <script>
+    function toggleDropdown() {
+      const dropdown = document.getElementById('civDropdown');
+      dropdown.classList.toggle('active');
+    }
 
-<head>
-  <title>News - Classical Warfare AEA</title>
-  <link rel="icon" href="city_phase.png" type="image/png">
-</head> 
-
- 
-
-
-
-
-<div class="container">
-  
-  <div class="contianer2">	  
-	  
-	  
-	  
-	  <div class="containerfornews">
-		  
-		  <!--updates for mod-->
-  <div class="sectionfornews">
-	  
-	  <h1>For the Mod</h1>
-	  <br><br><br>
-	  <h1>Upcoming Update 0.28.10,  Movement (7/1/26)</h1>
-		<p>Speeds refreshed from simulation(31).zip templates.<br>
-Unit/Infantry/Citizen Cavalry base = 8.8; <br>Champion Infantry
-intended base = 8.9; <br>Hero Infantry base = 9.0.</p><br><br>
-  </div>
-  
-  <!--updates for website-->
-  <div class="sectionfornews">	
-	  
-	  <h1>For the Website</h1>
-	  <br><br><br>
-	  <h1>Added Screenshots page (7/2/26)</h1>
-		<p>If you want your screenshot on here, post it in the forum</p><br><br>
-
-<h1>Added news page (7/1/26)</h1></div>
-</div>   
-	  
-	  
-	  
-
-
-  </div>
-</div>   
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(event) {
+      const dropdown = document.getElementById('civDropdown');
+      if (!dropdown.contains(event.target)) {
+        dropdown.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>

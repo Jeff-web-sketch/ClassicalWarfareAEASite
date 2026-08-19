@@ -1,264 +1,194 @@
-<link rel="stylesheet" href="style.css">   
-<div style="display: flex;
-    gap: 10px;">
-<a href="index.html">
-<button>Home</button>
-<a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Athenians civilization guide for Classical Warfare AEA. Features unique units, bonuses, and technologies.">
+  <meta name="keywords" content="0 A.D., Classical Warfare, AEA, Athenians, civilization, Greek, hoplites">
+  <title>Athenians - Classical Warfare AEA</title>
+  <link rel="icon" href="emblems/emblem_athen.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .civ-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    
+    .civ-header img {
+      width: 100px;
+      height: 100px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    
+    .civ-content {
+      text-align: left;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .civ-content h2 {
+      color: #5c3317;
+      border-bottom: 2px solid #8B4513;
+      padding-bottom: 10px;
+      margin-top: 30px;
+    }
+    
+    .civ-content h3 {
+      color: #6b4423;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+    
+    .civ-content p {
+      margin-bottom: 15px;
+    }
+    
+    .civ-content b {
+      color: #5c3317;
+      font-weight: bold;
+    }
+    
+    .bonus-section {
+      background: rgba(139, 69, 19, 0.1);
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #8B4513;
+      margin: 15px 0;
+    }
+    
+    @media (max-width: 768px) {
+      .civ-header {
+        flex-direction: column;
+      }
+      
+      .civ-content {
+        padding: 0 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+    <nav class="side-nav">
+      <a href="index.html" class="nav-link">
+        <button>Home</button>
+      </a>
+      <a href="news.html" class="nav-link">
+        <button>News</button>
+      </a>
+      <a href="screenshots.html" class="nav-link">
+        <button>Screenshots</button>
+      </a>
+      <a href="charts.html" class="nav-link">
+        <button>Charts</button>
+      </a>
+      <div class="dropdown" id="civDropdown">
+        <button class="dropbtn" onclick="toggleDropdown()">Civs ▼</button>
+        <div class="dropdown-content">
+          <a href="athen.html"><button>Athenians</button></a>
+          <a href="brit.html"><button>Britons</button></a>
+          <a href="cart.html"><button>Carthaginians</button></a>
+          <a href="gauls.html"><button>Gauls</button></a>
+          <a href="germ.html"><button>Germans</button></a>
+          <a href="han.html"><button>Han</button></a>
+          <a href="iber.html"><button>Iberians</button></a>
+          <a href="kush.html"><button>Kushites</button></a>
+          <a href="mace.html"><button>Macedonians</button></a>
+          <a href="maur.html"><button>Mauryas</button></a>
+          <a href="pers.html"><button>Persians</button></a>
+          <a href="ptol.html"><button>Ptolemies</button></a>
+          <a href="rome.html"><button>Romans</button></a>
+          <a href="sele.html"><button>Seleucids</button></a>
+          <a href="spartans.html"><button>Spartans</button></a>
+          <a href="theb.html"><button>Thebans</button></a>
+        </div>
+      </div>
+    </nav>
 
-<a href="news.html">
-<button>News</button>
-<a>
+    <div class="main-content">
+      <div class="logo">
+        <img src="logo.png" alt="Classical Warfare AEA Logo">
+      </div>
 
-<a href="screenshots.html">
-<button>Screenshots</button>
-<a>
-<!--<a href="athen.html">
-<button>Athenians</button>
-<a>
-	
-<a href="spartans.html">
-<button>Spartans</button>
-<a>-->
+      <div class="container">
+        <div class="container2">
+          <div class="civ-header">
+            <h1>Athenians</h1>
+            <img src="emblems/emblem_athen.png" alt="Athenians Emblem">
+          </div>
+          
+          <div class="civ-content">
+            <h2>Unique Technologies</h2>
+            
+            <div class="bonus-section">
+              <h3>Legacy of Marathon</h3>
+              <p>Hoplites 5% faster walk and run speed. Hoplite tradition gives them an additional 5% bonus of each.</p>
+            </div>
+            
+            <div class="bonus-section">
+              <h3>Center Of Greek Trade Routes</h3>
+              <p>Traders 15% movement speed.</p>
+            </div>
 
-<a href="charts.html">
-<button>Charts</button>
-<a>
+            <div class="bonus-section">
+              <h3>Delian League</h3>
+              <p>Ships -25% construction time.</p>
+            </div>
 
+            <div class="bonus-section">
+              <h3>Greek Olympians</h3>
+              <p>Certain Champs and Special Infantry 3% faster walk speed, Melee units 5% more dmg, while ranged units 3% dmg, 5% more accurate and +1 range.</p>
+            </div>
 
+            <div class="bonus-section">
+              <h3>Hellenistic Architecture</h3>
+              <p>CCs, Temples, Special buildings and Wonders +10% health and +20% capture points.</p>
+            </div>
 
-<div class="dropdown">
-    <button class="dropbtn">Civs</button>
-    <div class="dropdown-content">
-<a href="athen.html">
-<button>Athenians</button>
-<a>
-	
-<a href="brit.html">
-<button>Britons</button>
-<a>
+            <div class="bonus-section">
+              <h3>Silver Owls</h3>
+              <p>Workers +10% metal gather rate per phase advance.</p>
+            </div>
 
-<a href="cart.html">
-<button>Carthaginians</button>
-<a>	
+            <div class="bonus-section">
+              <h3>Epilektoi Infantry</h3>
+              <p>Elite Hoplites can promote to Champion Spearmen.</p>
+            </div>
 
-<a href="gauls.html">
-<button>Gauls</button>
-<a>
+            <h2>Civ Bonuses</h2>
 
-<a href="germ.html">
-<button>Germans</button>
-<a>	
+            <div class="bonus-section">
+              <h3>Democracy</h3>
+              <p>Civic Center technologies -50% research time and -30% cost.</p>
+            </div>
 
-<a href="han.html">
-<button>Han</button>
-<a>	
-
-<a href="iber.html">
-<button>Iberians</button>
-<a>	
-
-<a href="kush.html">
-<button>Kushites</button>
-<a>	
-
-<a href="mace.html">
-<button>Macedonians</button>
-<a>	
-
-<a href="maur.html">
-<button>Mauryas</button>
-<a>	
-	
-<a href="pers.html">
-<button>Persians</button>
-<a>	
-
-<a href="ptol.html">
-<button>Ptolemies</button>
-<a>	
-	
-<a href="rome.html">
-<button>Romans</button>
-<a>	
-
-<a href="sele.html">
-<button>Seleucids</button>
-<a>	
-	
-<a href="spartans.html">
-<button>Spartans</button>
-<a>
-
-<a href="theb.html">
-<button>Thebans</button>
-<a>	
-	
-      <br>
+            <div class="bonus-section">
+              <h3>Plataean Resolve</h3>
+              <p>Stone walls -25% build time and -50% stone cost.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
-
-</div>
-
-
-<head>
-  <title>Athenians - Clasic Warefare AEA</title>
-  <link rel="icon" href="emblem_athen.png" type="image/png">
-</head>  
-
-
-
-
-	<div class="title">
-		<h1 style="color: white;">Athenians</h1>
-<img style="width: 100px;" src="emblem_athen.png">
-
-</div>
-
-
-<div class="container">
-  <div class="contianer2"> 
-	  <!--<h2>To be added...</h2> -->
-
-<!--
-<h2>Civ Bonuses</h2>
-
-<h3>Greek Olympians</h3>
-<p>Certain Champs and Special Infantry 3% fater walk speed, Melee units +5% damage, Ranged units +3% damage, 5% more accurate, and +1 range.</p>
-
-<h3>Hellenic Architecture</h3>
-<p>Civic Centers, Temples, Special Structures, and Wounders +10% health and +20% capture points.</p>
-
-<h3>Agoge</h3>
-<p>Champion Hoplites are available in phase 1 with -10% repeat time, as Young Hoplites (Paidiskoi) they cost -50 food and metal and take only 16s to train. However, they do 25% less damage, have -2 hack/pierce resistance and -25 health. They premote to normal Spartiates (Hebontes) which are aviallble to train in Town Phase and can eventually promote to Olympic Spartiates (Hippeis).</p>
-
-<h3>Born To Fight</h3>
-<p>Melee infantry +5% more damage.</p>
-
-<h3>Perioeci Class</h3>
-<p>Melee and Ranged</p>
-
-
-
-
-<h3>Team Bonuses</h3>
-
-<p>Heroes train for free; Melee Infantry Heroes 15% more Pierce/Hack/Crush dm
-
-Infantry +1 hack/pierce resistance and promote 10% faster.</p>
-
-
-
-<h2>Units</h2>
-
-
-
-
-
-
-<h3>Heroes</h3>
-
-<b>Leonidas</b><br><p> Available town phase, but 1/2 health and 20% less dmg. Gains the health and dmg when you go city phase
-
-Champion Infantry +15% melee attack, +1.5 hack/pierce, +5 Crush resistances<br>and +25 health.
-
-Spearman 5% walk and 10% run speed. Available on p3 version only</p>
-
-
-
-<b>Agis</b>
-
-<p>Own and allied soldiers -40% metal cost and -25% training time.
-
-Agis 33% health and 5 of each resistance</p>
-
-
-
-<b>Brasidas</b>
-
-<p>Javelineers +2 crush, hack, pierce resistance, +3 capture attack. Range 60
-
-Helots promote 50% faster to neodamodes</p>
-
-
-
-
-
-
-<h2>Unique Structures</h2>
-<p>SKIAS - Spartan Senate<br>
-PHEIDEITION - Military Mess Hall<br>
-PERIOECIS KOMH - Perioikoi Camp<br>
-</p>
-
--->
-<h2>Unique Technologies</h2>
-
-<h3>Legacy of Marathon</h3> <p><!--Cost: 300<img src="food.png">  300<img src="metal.png">  40<img src="time.png">  <img src="town_phase.png"><br>-->Hoplites 5% faster walk and run speed. Hoplite tradition gives them an additional 5% bonus of each.</p>
-	
-
-<h3>Center Of Greek Trade Routes</h3> 
-<p><!--Cost: 200<img src="food.png">  100<img src="metal.png">  20<img src="time.png">  <img src="town_phase.png"><br>-->
-Traders 15% movement speed.</p>
-
-<h3>Delian League</h3> <p><!--Cost: 350<img src="food.png">  250<img src="metal.png">  40<img src="time.png">  <img src="town_phase.png"><br>-->
-Ships -25% construction time.</p>
-
-<h3>Greek Olympians</h3> <p><!-- Cost: 350<img src="food.png">  250<img src="metal.png">  40<img src="time.png">  <img src="town_phase.png"><br>-->
-Certian Champs and Special Infantry 3% faster walk speed, Melee units 5% more dmg, while ranged units 3% dmg, 5% more accurate and +l range.</p>
-
-<h3>Hellenistic Architecture</h3> <p><!--Cost: 350<img src="food.png">  250<img src="metal.png">  40<img src="time.png">  <img src="town_phase.png"> <br>-->
-CCs, Tempples, Special buildngs and Wonders +10% health and +20% capture points.</p>
-
-<h3>Silver Owls</h3> <p><!--Cost: 350<img src="food.png">  250<img src="metal.png">  40<img src="time.png">  <img src="town_phase.png"> <br>-->
-Workers +10% metal gather rate per phase advance.</p>
-
-<h3>Epilektoi Infantry</h3> <p><!--Cost: 500<img src="food.png">  400<img src="metal.png">  60<img src="time.png">  <img src="city_phase.png"><br> -->
-Elite Hoplites can promote to Champion Spearmen.</p>
-
-
-<h2>Civ Bonuses</h2>
-
-<h3>Democracy</h3> <p><!--Cost: 500<img src="food.png">  400<img src="metal.png">  60<img src="time.png">  <img src="city_phase.png"><br>-->
-Civic Center technologies -50% research time and -30% cost.</p>
-
-<h3>Plataean Resolve</h3> <p><!--Cost: 500<img src="food.png">  400<img src="metal.png">  60<img src="time.png">  <img src="city_phase.png"><br>-->
-Stone walls -25% build time and -50% stone cost.</p>
-
-
-</div>
-
-
-  </div>
-</div>   
-
-
-
-
-<!--
-
-
-CIVILIZATION BONUSES
-
-
-
-
-
-
-•  O
-
-TEAM BONUSES
-• Democracy
-
-• 
-
-
--->
-
-
-
-
-
-
-<!--Cost: <img src="food.png">  <img src="wood.png"> <img src="metal.png"> <img src="stone.png">-->
-
+  <script>
+    function toggleDropdown() {
+      const dropdown = document.getElementById('civDropdown');
+      dropdown.classList.toggle('active');
+    }
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(event) {
+      const dropdown = document.getElementById('civDropdown');
+      if (!dropdown.contains(event.target)) {
+        dropdown.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>
