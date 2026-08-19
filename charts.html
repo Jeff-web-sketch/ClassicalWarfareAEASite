@@ -8,56 +8,6 @@
   <title>Charts - Classical Warfare AEA</title>
   <link rel="icon" href="icons/town_phase.png" type="image/png">
   <link rel="stylesheet" href="style.css">
-  <style>
-    .charts-table {
-      border-collapse: collapse;
-      width: 100%;
-      max-width: 1200px;
-      margin: 20px auto;
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    }
-
-    .charts-table th, 
-    .charts-table td {
-      border: 1px solid #8B4513;
-      padding: 12px;
-      text-align: center;
-    }
-
-    .charts-table th {
-      background: linear-gradient(135deg, #8B4513, #A0522D);
-      color: #f4e4bc;
-      font-weight: bold;
-    }
-
-    .charts-table tr:nth-child(even) {
-      background: rgba(139, 69, 19, 0.1);
-    }
-
-    .charts-table tr:hover {
-      background: rgba(139, 69, 19, 0.2);
-    }
-
-    .charts-table .notes {
-      text-align: left;
-      font-style: italic;
-      background: rgba(139, 69, 19, 0.15);
-    }
-
-    @media (max-width: 768px) {
-      .charts-table {
-        font-size: 0.8em;
-      }
-      
-      .charts-table th, 
-      .charts-table td {
-        padding: 8px 4px;
-      }
-    }
-  </style>
 </head>
 <body>
   <div class="page-wrapper">
@@ -74,8 +24,11 @@
       <a href="charts.html" class="nav-link">
         <button>Charts</button>
       </a>
+      <a href="civselector.html" class="nav-link">
+        <button>Civ Selector</button>
+      </a>
       <div class="dropdown" id="civDropdown">
-        <button class="dropbtn" onclick="toggleDropdown()">Civs ▼</button>
+        <button class="dropbtn" onclick="toggleDropdown()">Civ List ▼</button>
         <div class="dropdown-content">
           <a href="athen.html"><button>Athenians</button></a>
           <a href="brit.html"><button>Britons</button></a>
@@ -106,7 +59,8 @@
         <div class="container2">
           <h1>Unit Comparison Charts</h1>
           
-          <table class="charts-table">
+          <div class="charts-container">
+            <table class="charts-table">
             <colgroup>
               <col span="6">
               <col style="width: 180px;">
@@ -367,6 +321,7 @@
               </td>
             </tr>
           </table>
+          </div>
           
           <p>Last updated May 9, 2026</p>
         </div>

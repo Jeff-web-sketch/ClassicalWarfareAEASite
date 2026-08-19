@@ -21,7 +21,7 @@ body {
 /* Side Navigation */
 .side-nav {
   width: 200px;
-  background: linear-gradient(180deg, #8B4513, #A0522D);
+  background: linear-gradient(180deg, #DAA520, #B8860B);
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -34,14 +34,14 @@ body {
 
 .side-nav .nav-link {
   text-decoration: none;
-  color: #f4e4bc;
+  color: #2c1810;
 }
 
 .side-nav button {
   width: 100%;
   text-align: left;
-  background-color: rgb(152, 123, 74);
-  border: 2px solid #8B4513;
+  background-color: #8B4513;
+  border: 2px solid #654321;
   border-radius: 8px;
   padding: 12px 15px;
   color: #f4e4bc;
@@ -53,7 +53,7 @@ body {
 }
 
 .side-nav button:hover {
-  background-color: rgb(125, 100, 74);
+  background-color: #654321;
   transform: translateX(5px);
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
@@ -90,8 +90,8 @@ body {
 
 /* Button Styles */
 button {
-  background-color: rgb(152, 123, 74);
-  border: 2px solid #8B4513;
+  background-color: #8B4513;
+  border: 2px solid #654321;
   border-radius: 8px;
   padding: 10px 20px;
   color: #f4e4bc;
@@ -103,7 +103,7 @@ button {
 }
 
 button:hover {
-  background-color: rgb(125, 100, 74);
+  background-color: #654321;
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
@@ -122,11 +122,11 @@ button:hover {
 .dropdown-content {
   display: none;
   position: relative;
-  background-color: rgb(142, 110, 70);
+  background-color: #B8860B;
   margin-left: 15px;
   margin-top: 5px;
   border-radius: 8px;
-  border: 2px solid #8B4513;
+  border: 2px solid #654321;
   overflow: hidden;
 }
 
@@ -138,14 +138,15 @@ button:hover {
   display: block;
   background: none;
   border: none;
-  border-bottom: 1px solid rgba(139, 69, 19, 0.3);
+  border-bottom: 1px solid rgba(101, 67, 33, 0.3);
   padding: 10px 15px;
   width: 100%;
   text-align: left;
   cursor: pointer;
-  background-color: rgb(152, 123, 74);
+  background-color: #DAA520;
   border-radius: 0;
   font-size: 13px;
+  color: #2c1810;
 }
 
 .dropdown-content button:last-child {
@@ -153,7 +154,7 @@ button:hover {
 }
 
 .dropdown-content button:hover {
-  background-color: rgb(125, 100, 74);
+  background-color: #FFD700;
 }
 
 /* Logo Styles */
@@ -279,6 +280,53 @@ h3 {
   margin: 15px 0 10px 0;
 }
 
+/* Charts Page Specific Styles */
+.charts-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+
+.charts-table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px auto;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.charts-table th, 
+.charts-table td {
+  border: 1px solid #8B4513;
+  padding: 12px;
+  text-align: center;
+}
+
+.charts-table th {
+  background: linear-gradient(135deg, #DAA520, #B8860B);
+  color: #2c1810;
+  font-weight: bold;
+}
+
+.charts-table tr:nth-child(even) {
+  background: rgba(218, 165, 32, 0.1);
+}
+
+.charts-table tr:hover {
+  background: rgba(218, 165, 32, 0.2);
+}
+
+.charts-table .notes {
+  text-align: left;
+  font-style: italic;
+  background: rgba(218, 165, 32, 0.15);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .side-nav {
@@ -319,5 +367,14 @@ h3 {
   
   .sectionfornews {
     min-width: 100%;
+  }
+  
+  .charts-table {
+    font-size: 0.8em;
+  }
+  
+  .charts-table th, 
+  .charts-table td {
+    padding: 8px 4px;
   }
 }
