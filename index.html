@@ -12,6 +12,10 @@
 <body>
   <div class="page-wrapper">
     <nav class="side-nav">
+      <div class="search-container">
+        <input type="text" class="search-input" id="searchInput" placeholder="Search civilizations...">
+        <div class="search-results" id="searchResults"></div>
+      </div>
       <a href="index.html" class="nav-link">
         <button>Home</button>
       </a>
@@ -23,6 +27,9 @@
       </a>
       <a href="charts.html" class="nav-link">
         <button>Charts</button>
+      </a>
+      <a href="CWA_manual_v1.8.0.xlsm" class="nav-link">
+        <button>Manual</button>
       </a>
       <a href="civselector.html" class="nav-link">
         <button>Civ Selector</button>
@@ -56,19 +63,28 @@
       </div>
 
       <div class="container">
-        <div class="container2">
-          <h1>The Official Classical Warfare AEA Manual</h1>
-          <h2>A more in-depth version of 0 A.D., with an emphasis on historical accuracy.
+        <div class="container2 stagger-children">
+          <h1 class="animate-fade-in-up">The Official Classical Warfare AEA Manual</h1>
+          <h2 class="animate-fade-in-up">A more in-depth version of 0 A.D., with an emphasis on historical accuracy.
           New units and technologies, but a similar approach to the game.
           In simple words, we think it makes the game better.</h2>
-          <p>Latest Stable Release (0.28.9): <a href="https://mod.io/g/0ad/m/classical-warfare-aea">Download here</a></p>
-          <p>Latest Release (0.28.9): <a href="https://github.com/Emacz2/classical-warefare-aea">Download here</a></p>
-          <p>Forum: <a href="https://wildfiregames.com/forum/topic/140701-classical-warfare-aea/">Click Me!</a></p>
-          <p>Please report errors or problems to the forum</p>
-          <img class="screenshot" src="bgs/bg1.png" alt="Game Screenshot 1">
-          <img class="screenshot" src="bgs/bg2.png" alt="Game Screenshot 2">
-          <img class="screenshot" src="bgs/bg3.png" alt="Game Screenshot 3">
-          <p>Made for 0 A.D. <a href="https://play0ad.com/">https://play0ad.com/</a></p>
+          <p class="animate-fade-in-up">Latest Stable Release (0.28.9): <a href="https://mod.io/g/0ad/m/classical-warfare-aea">Download here</a></p>
+          <p class="animate-fade-in-up">Latest Release (0.28.9): <a href="https://github.com/Emacz2/classical-warefare-aea">Download here</a></p>
+          <p class="animate-fade-in-up">Forum: <a href="https://wildfiregames.com/forum/topic/140701-classical-warfare-aea/">Click Me!</a></p>
+          <p class="animate-fade-in-up">Please report errors or problems to the forum</p>
+          
+          <!-- Featured Civilization of the Week -->
+          <div class="featured-civ animate-fade-in-up">
+            <h3>⚔️ Featured Civilization of the Week</h3>
+            <div id="featuredCivContent">
+              <div class="featured-civ-loading">Loading featured civilization...</div>
+            </div>
+          </div>
+          
+          <img class="screenshot animate-fade-in-up" src="bgs/bg1.png" alt="Game Screenshot 1">
+          <img class="screenshot animate-fade-in-up" src="bgs/bg2.png" alt="Game Screenshot 2">
+          <img class="screenshot animate-fade-in-up" src="bgs/bg3.png" alt="Game Screenshot 3">
+          <p class="animate-fade-in-up">Made for 0 A.D. <a href="https://play0ad.com/">https://play0ad.com/</a></p>
         </div>
       </div>
     </div>
@@ -87,6 +103,111 @@
         dropdown.classList.remove('active');
       }
     });
+
+    // Featured Civilization of the Week
+    const civilizations = [
+      { name: 'Athenians', page: 'athen.html', emblem: 'emblems/emblem_hellenes.png', description: ' masters of philosophy and naval warfare' },
+      { name: 'Britons', page: 'brit.html', emblem: 'emblems/emblem_britons.png', description: 'Celtic warriors with specialized woad tactics' },
+      { name: 'Carthaginians', page: 'cart.html', emblem: 'emblems/emblem_carthaginians.png', description: 'Mediterranean traders and mercenaries' },
+      { name: 'Gauls', page: 'gauls.html', emblem: 'emblems/emblem_celts.png', description: 'Fierce Celtic fighters from mainland Europe' },
+      { name: 'Germans', page: 'germ.html', emblem: 'emblems/emblem_germ.png', description: 'Forest-dwelling warriors with unique infantry' },
+      { name: 'Han', page: 'han.html', emblem: 'emblems/emblem_han.png', description: 'Chinese dynasty with advanced technology' },
+      { name: 'Iberians', page: 'iber.html', emblem: 'emblems/emblem_iberians.png', description: 'Skilled skirmishers from the Iberian Peninsula' },
+      { name: 'Kushites', page: 'kush.html', emblem: 'emblems/emblem_kushites.png', description: 'African kingdom with powerful archers' },
+      { name: 'Macedonians', page: 'mace.html', emblem: 'emblems/emblem_macedonians.png', description: 'Successors of Alexander with elite cavalry' },
+      { name: 'Mauryas', page: 'maur.html', emblem: 'emblems/emblem_mauryas.png', description: 'Indian empire with war elephants' },
+      { name: 'Persians', page: 'pers.html', emblem: 'emblems/emblem_persian.png', description: 'Ancient empire with diverse units' },
+      { name: 'Ptolemies', page: 'ptol.html', emblem: 'emblems/emblem_ptolemies.png', description: 'Egyptian successors with unique buildings' },
+      { name: 'Romans', page: 'rome.html', emblem: 'emblems/emblem_romans.png', description: 'Disciplined legions and siege specialists' },
+      { name: 'Seleucids', page: 'sele.html', emblem: 'emblems/emblem_seleucids.png', description: 'Hellenistic kingdom with varied units' },
+      { name: 'Spartans', page: 'spartans.html', emblem: 'emblems/emblem_spartans.png', description: 'Elite warriors with the famous agoge training' },
+      { name: 'Thebans', page: 'theb.html', emblem: 'emblems/emblem_thebans.png', description: 'Sacred Band and powerful hoplites' }
+    ];
+
+    function getFeaturedCiv() {
+      const now = new Date();
+      const start = new Date(now.getFullYear(), 0, 0);
+      const diff = now - start;
+      const oneWeek = 1000 * 60 * 60 * 24 * 7;
+      const weekNumber = Math.floor(diff / oneWeek);
+      const civIndex = weekNumber % civilizations.length;
+      return civilizations[civIndex];
+    }
+
+    function displayFeaturedCiv() {
+      const featuredCiv = getFeaturedCiv();
+      const featuredCivContent = document.getElementById('featuredCivContent');
+      
+      featuredCivContent.innerHTML = `
+        <div class="featured-civ-card">
+          <a href="${featuredCiv.page}" class="featured-civ-link">
+            <img src="${featuredCiv.emblem}" alt="${featuredCiv.name} Emblem" class="featured-civ-emblem">
+            <div class="featured-civ-info">
+              <h4>${featuredCiv.name}</h4>
+              <p>${featuredCiv.description}</p>
+            </div>
+          </a>
+        </div>
+      `;
+    }
+
+    // Initialize featured civ on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      displayFeaturedCiv();
+      initSearch();
+      
+      // Trigger animations
+      setTimeout(() => {
+        document.querySelector('.stagger-children').classList.add('animate');
+      }, 100);
+    });
+
+    // Search Functionality
+    function initSearch() {
+      const searchInput = document.getElementById('searchInput');
+      const searchResults = document.getElementById('searchResults');
+
+      searchInput.addEventListener('input', function() {
+        const query = this.value.toLowerCase().trim();
+        
+        if (query.length < 2) {
+          searchResults.classList.remove('active');
+          return;
+        }
+
+        const filteredCivs = civilizations.filter(civ => 
+          civ.name.toLowerCase().includes(query) || 
+          civ.description.toLowerCase().includes(query)
+        );
+
+        if (filteredCivs.length > 0) {
+          searchResults.innerHTML = filteredCivs.map(civ => `
+            <a href="${civ.page}" class="search-result-item">
+              <div class="search-result-name">${civ.name}</div>
+              <div class="search-result-desc">${civ.description}</div>
+            </a>
+          `).join('');
+          searchResults.classList.add('active');
+        } else {
+          searchResults.innerHTML = '<div class="search-result-item" style="cursor: default;">No civilizations found</div>';
+          searchResults.classList.add('active');
+        }
+      });
+
+      // Close search results when clicking outside
+      document.addEventListener('click', function(event) {
+        if (!searchInput.contains(event.target) && !searchResults.contains(event.target)) {
+          searchResults.classList.remove('active');
+        }
+      });
+
+      // Close search results on escape key
+      searchInput.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+          searchResults.classList.remove('active');
+        }
+      });
+    }
   </script>
 </body>
 </html>

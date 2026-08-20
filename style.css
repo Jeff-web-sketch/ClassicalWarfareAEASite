@@ -5,6 +5,83 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+/* Smooth Scroll Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.6s ease-out forwards;
+}
+
+/* Stagger animations for children */
+.stagger-children > * {
+  opacity: 0;
+}
+
+.stagger-children.animate > *:nth-child(1) {
+  animation: fadeInUp 0.6s ease-out 0.1s forwards;
+}
+
+.stagger-children.animate > *:nth-child(2) {
+  animation: fadeInUp 0.6s ease-out 0.2s forwards;
+}
+
+.stagger-children.animate > *:nth-child(3) {
+  animation: fadeInUp 0.6s ease-out 0.3s forwards;
+}
+
+.stagger-children.animate > *:nth-child(4) {
+  animation: fadeInUp 0.6s ease-out 0.4s forwards;
+}
+
+.stagger-children.animate > *:nth-child(5) {
+  animation: fadeInUp 0.6s ease-out 0.5s forwards;
+}
+
+.stagger-children.animate > *:nth-child(6) {
+  animation: fadeInUp 0.6s ease-out 0.6s forwards;
+}
+
 body {
   background-color: black;
   font-family: 'Georgia', serif;
@@ -35,6 +112,80 @@ body {
 .side-nav .nav-link {
   text-decoration: none;
   color: #2c1810;
+}
+
+/* Search Styles */
+.search-container {
+  margin-bottom: 15px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 15px;
+  border: 2px solid #654321;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #2c1810;
+  font-family: 'Georgia', serif;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #DAA520;
+  box-shadow: 0 0 8px rgba(218, 165, 32, 0.5);
+}
+
+.search-input::placeholder {
+  color: #6b4423;
+  font-style: italic;
+}
+
+.search-results {
+  position: absolute;
+  background-color: #FFD700;
+  border: 2px solid #654321;
+  border-radius: 8px;
+  max-height: 300px;
+  overflow-y: auto;
+  width: 100%;
+  z-index: 1001;
+  margin-top: 5px;
+  display: none;
+}
+
+.search-results.active {
+  display: block;
+}
+
+.search-result-item {
+  padding: 10px 15px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(101, 67, 33, 0.2);
+  transition: background-color 0.2s ease;
+  text-decoration: none;
+  color: #2c1810;
+  display: block;
+}
+
+.search-result-item:hover {
+  background-color: #DAA520;
+}
+
+.search-result-item:last-child {
+  border-bottom: none;
+}
+
+.search-result-name {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.search-result-desc {
+  font-size: 12px;
+  color: #5c3317;
+  margin-top: 2px;
 }
 
 .side-nav button {
@@ -246,6 +397,13 @@ a:hover {
   height: 80px;
   object-fit: contain;
   margin-bottom: 10px;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.civ-item:hover img {
+  transform: scale(1.15) rotate(5deg);
+  filter: drop-shadow(0 4px 8px rgba(218, 165, 32, 0.6));
 }
 
 .civ-item p {
@@ -256,6 +414,81 @@ a:hover {
 
 .civ-item a {
   text-decoration: none;
+}
+
+/* Featured Civilization Styles */
+.featured-civ {
+  margin: 30px 0;
+  padding: 25px;
+  background: linear-gradient(135deg, rgba(218, 165, 32, 0.2), rgba(184, 134, 11, 0.2));
+  border: 2px solid #DAA520;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.featured-civ h3 {
+  color: #5c3317;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.featured-civ-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.featured-civ-link {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-decoration: none;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  border: 2px solid #B8860B;
+  transition: all 0.3s ease;
+  max-width: 500px;
+}
+
+.featured-civ-link:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  background: rgba(255, 255, 255, 1);
+}
+
+.featured-civ-emblem {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.featured-civ-link:hover .featured-civ-emblem {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.featured-civ-info h4 {
+  color: #5c3317;
+  font-size: 1.3em;
+  margin-bottom: 8px;
+}
+
+.featured-civ-info p {
+  color: #6b4423;
+  font-size: 0.95em;
+  margin: 0;
+}
+
+.featured-civ-loading {
+  text-align: center;
+  color: #5c3317;
+  font-style: italic;
 }
 
 /* News Page Styles */

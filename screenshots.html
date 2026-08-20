@@ -12,6 +12,10 @@
 <body>
   <div class="page-wrapper">
     <nav class="side-nav">
+      <div class="search-container">
+        <input type="text" class="search-input" id="searchInput" placeholder="Search civilizations...">
+        <div class="search-results" id="searchResults"></div>
+      </div>
       <a href="index.html" class="nav-link">
         <button>Home</button>
       </a>
@@ -23,6 +27,9 @@
       </a>
       <a href="charts.html" class="nav-link">
         <button>Charts</button>
+      </a>
+      <a href="CWA_manual_v1.8.0.xlsm" class="nav-link">
+        <button>Manual</button>
       </a>
       <a href="civselector.html" class="nav-link">
         <button>Civ Selector</button>
@@ -68,6 +75,144 @@
   </div>
 
   <script>
+    const civilizations = [
+      { name: 'Athenians', page: 'athen.html', emblem: 'emblems/emblem_hellenes.png', description: 'Masters of philosophy and naval warfare' },
+      { name: 'Britons', page: 'brit.html', emblem: 'emblems/emblem_britons.png', description: 'Celtic warriors with specialized woad tactics' },
+      { name: 'Carthaginians', page: 'cart.html', emblem: 'emblems/emblem_carthaginians.png', description: 'Mediterranean traders and mercenaries' },
+      { name: 'Gauls', page: 'gauls.html', emblem: 'emblems/emblem_celts.png', description: 'Fierce Celtic fighters from mainland Europe' },
+      { name: 'Germans', page: 'germ.html', emblem: 'emblems/emblem_germ.png', description: 'Forest-dwelling warriors with unique infantry' },
+      { name: 'Han', page: 'han.html', emblem: 'emblems/emblem_han.png', description: 'Chinese dynasty with advanced technology' },
+      { name: 'Iberians', page: 'iber.html', emblem: 'emblems/emblem_iberians.png', description: 'Skilled skirmishers from the Iberian Peninsula' },
+      { name: 'Kushites', page: 'kush.html', emblem: 'emblems/emblem_kushites.png', description: 'African kingdom with powerful archers' },
+      { name: 'Macedonians', page: 'mace.html', emblem: 'emblems/emblem_macedonians.png', description: 'Successors of Alexander with elite cavalry' },
+      { name: 'Mauryas', page: 'maur.html', emblem: 'emblems/emblem_mauryas.png', description: 'Indian empire with war elephants' },
+      { name: 'Persians', page: 'pers.html', emblem: 'emblems/emblem_persian.png', description: 'Ancient empire with diverse units' },
+      { name: 'Ptolemies', page: 'ptol.html', emblem: 'emblems/emblem_ptolemies.png', description: 'Egyptian successors with unique buildings' },
+      { name: 'Romans', page: 'rome.html', emblem: 'emblems/emblem_romans.png', description: 'Disciplined legions and siege specialists' },
+      { name: 'Seleucids', page: 'sele.html', emblem: 'emblems/emblem_seleucids.png', description: 'Hellenistic kingdom with varied units' },
+      { name: 'Spartans', page: 'spartans.html', emblem: 'emblems/emblem_spartans.png', description: 'Elite warriors with the famous agoge training' },
+      { name: 'Thebans', page: 'theb.html', emblem: 'emblems/emblem_thebans.png', description: 'Sacred Band and powerful hoplites' }
+    ];
+
+    function initSearch() {
+      const searchInput = document.getElementById('searchInput');
+      const searchResults = document.getElementById('searchResults');
+
+      searchInput.addEventListener('input', function() {
+        const query = this.value.toLowerCase().trim();
+        
+        if (query.length < 2) {
+          searchResults.classList.remove('active');
+          return;
+        }
+
+        const filteredCivs = civilizations.filter(civ => 
+          civ.name.toLowerCase().includes(query) || 
+          civ.description.toLowerCase().includes(query)
+        );
+
+        if (filteredCivs.length > 0) {
+          searchResults.innerHTML = filteredCivs.map(civ => `
+            <a href="${civ.page}" class="search-result-item">
+              <div class="search-result-name">${civ.name}</div>
+              <div class="search-result-desc">${civ.description}</div>
+            </a>
+          `).join('');
+          searchResults.classList.add('active');
+        } else {
+          searchResults.innerHTML = '<div class="search-result-item" style="cursor: default;">No civilizations found</div>';
+          searchResults.classList.add('active');
+        }
+      });
+
+      document.addEventListener('click', function(event) {
+        if (!searchInput.contains(event.target) && !searchResults.contains(event.target)) {
+          searchResults.classList.remove('active');
+        }
+      });
+
+      searchInput.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+          searchResults.classList.remove('active');
+        }
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', initSearch);
+
+    function toggleDropdown() {
+      const dropdown = document.getElementById('civDropdown');
+      dropdown.classList.toggle('active');
+    }
+
+    document.addEventListener('click', function(event) {
+      const dropdown = document.getElementById('civDropdown');
+      if (!dropdown.contains(event.target)) {
+        dropdown.classList.remove('active');
+      }
+    });
+  </script>
+      { name: 'Britons', page: 'brit.html', emblem: 'emblems/emblem_britons.png', description: 'Celtic warriors with specialized woad tactics' },
+      { name: 'Carthaginians', page: 'cart.html', emblem: 'emblems/emblem_carthaginians.png', description: 'Mediterranean traders and mercenaries' },
+      { name: 'Gauls', page: 'gauls.html', emblem: 'emblems/emblem_celts.png', description: 'Fierce Celtic fighters from mainland Europe' },
+      { name: 'Germans', page: 'germ.html', emblem: 'emblems/emblem_germ.png', description: 'Forest-dwelling warriors with unique infantry' },
+      { name: 'Han', page: 'han.html', emblem: 'emblems/emblem_han.png', description: 'Chinese dynasty with advanced technology' },
+      { name: 'Iberians', page: 'iber.html', emblem: 'emblems/emblem_iberians.png', description: 'Skilled skirmishers from the Iberian Peninsula' },
+      { name: 'Kushites', page: 'kush.html', emblem: 'emblems/emblem_kushites.png', description: 'African kingdom with powerful archers' },
+      { name: 'Macedonians', page: 'mace.html', emblem: 'emblems/emblem_macedonians.png', description: 'Successors of Alexander with elite cavalry' },
+      { name: 'Mauryas', page: 'maur.html', emblem: 'emblems/emblem_mauryas.png', description: 'Indian empire with war elephants' },
+      { name: 'Persians', page: 'pers.html', emblem: 'emblems/emblem_persian.png', description: 'Ancient empire with diverse units' },
+      { name: 'Ptolemies', page: 'ptol.html', emblem: 'emblems/emblem_ptolemies.png', description: 'Egyptian successors with unique buildings' },
+      { name: 'Romans', page: 'rome.html', emblem: 'emblems/emblem_romans.png', description: 'Disciplined legions and siege specialists' },
+      { name: 'Seleucids', page: 'sele.html', emblem: 'emblems/emblem_seleucids.png', description: 'Hellenistic kingdom with varied units' },
+      { name: 'Spartans', page: 'spartans.html', emblem: 'emblems/emblem_spartans.png', description: 'Elite warriors with the famous agoge training' },
+      { name: 'Thebans', page: 'theb.html', emblem: 'emblems/emblem_thebans.png', description: 'Sacred Band and powerful hoplites' }
+    ];
+
+    function initSearch() {
+      const searchInput = document.getElementById('searchInput');
+      const searchResults = document.getElementById('searchResults');
+
+      searchInput.addEventListener('input', function() {
+        const query = this.value.toLowerCase().trim();
+        
+        if (query.length < 2) {
+          searchResults.classList.remove('active');
+          return;
+        }
+
+        const filteredCivs = civilizations.filter(civ => 
+          civ.name.toLowerCase().includes(query) || 
+          civ.description.toLowerCase().includes(query)
+        );
+
+        if (filteredCivs.length > 0) {
+          searchResults.innerHTML = filteredCivs.map(civ => `
+            <a href="${civ.page}" class="search-result-item">
+              <div class="search-result-name">${civ.name}</div>
+              <div class="search-result-desc">${civ.description}</div>
+            </a>
+          `).join('');
+          searchResults.classList.add('active');
+        } else {
+          searchResults.innerHTML = '<div class="search-result-item" style="cursor: default;">No civilizations found</div>';
+          searchResults.classList.add('active');
+        }
+      });
+
+      document.addEventListener('click', function(event) {
+        if (!searchInput.contains(event.target) && !searchResults.contains(event.target)) {
+          searchResults.classList.remove('active');
+        }
+      });
+
+      searchInput.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+          searchResults.classList.remove('active');
+        }
+      });
+    }
+
     function toggleDropdown() {
       const dropdown = document.getElementById('civDropdown');
       dropdown.classList.toggle('active');
@@ -80,6 +225,8 @@
         dropdown.classList.remove('active');
       }
     });
+
+    document.addEventListener('DOMContentLoaded', initSearch);
   </script>
 </body>
 </html>
