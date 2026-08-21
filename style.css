@@ -224,9 +224,10 @@ body {
   background-image: url('parchment copy.png');
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   padding: 20px;
 }
 
@@ -424,7 +425,8 @@ a:hover {
   border: 2px solid #DAA520;
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-  animation: fadeInUp 0.8s ease-out;
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 1 !important;
 }
 
 .featured-civ h3 {

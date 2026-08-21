@@ -29,7 +29,7 @@
         <button>Charts</button>
       </a>
       <a href="CWA_manual_v1.8.0.xlsm" class="nav-link">
-        <button>Manual</button>
+        <button>Download Manual</button>
       </a>
       <a href="civselector.html" class="nav-link">
         <button>Civ Selector</button>
@@ -126,7 +126,7 @@
 
     function getFeaturedCiv() {
       const now = new Date();
-      const start = new Date(now.getFullYear(), 0, 0);
+      const start = new Date('2026-08-21');
       const diff = now - start;
       const oneWeek = 1000 * 60 * 60 * 24 * 7;
       const weekNumber = Math.floor(diff / oneWeek);
@@ -155,11 +155,14 @@
     document.addEventListener('DOMContentLoaded', function() {
       displayFeaturedCiv();
       initSearch();
-      
-      // Trigger animations
+
+      // Trigger animations after a slight delay to ensure content is loaded
       setTimeout(() => {
-        document.querySelector('.stagger-children').classList.add('animate');
-      }, 100);
+        const staggerContainer = document.querySelector('.stagger-children');
+        if (staggerContainer) {
+          staggerContainer.classList.add('animate');
+        }
+      }, 300);
     });
 
     // Search Functionality
